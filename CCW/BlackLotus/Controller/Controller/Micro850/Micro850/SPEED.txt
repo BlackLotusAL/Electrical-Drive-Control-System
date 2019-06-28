@@ -1,0 +1,133 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB1 := ALL_ENABLE ;
+IF __EDTB1 THEN
+SETPOINT := (  SPEED_SET) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB2 := ALL_ENABLE ;
+IF __EDTB2 THEN
+XIN := (  POS_MOVE) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+(* FB call: DERIVATE *)
+DERIVATE_1(ALL_ENABLE, XIN, CYCLE) ;
+SPEED_TEMP := DERIVATE_1.XOUT ;
+__MO_DERIVATE_1 := ALL_ENABLE ;
+__EDTB3 := ALL_ENABLE ;
+IF __EDTB3 THEN
+SPEED_FEEDBACK := (SPEED_TEMP * 1000.0) ;
+END_IF ;
+__MO_MULT_1 := __EDTB3 ;
+__EDTB4 := __EDTB3 ;
+IF __EDTB4 THEN
+PROCESS := (  SPEED_FEEDBACK) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB4 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB5 := ALL_ENABLE ;
+IF __EDTB5 THEN
+GAINS.PROPORTIONALGAIN := (  SPEED_KP) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB5 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB6 := ALL_ENABLE ;
+IF __EDTB6 THEN
+GAINS.TIMEINTEGRAL := (  SPEED_TI) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB6 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB7 := ALL_ENABLE ;
+IF __EDTB7 THEN
+GAINS.TIMEDERIVATIVE := (  SPEED_TD) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB7 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB8 := ALL_ENABLE ;
+IF __EDTB8 THEN
+(* FB call: IPIDCONTROLLER *)
+IPIDCONTROLLER_1(PROCESS, SETPOINT, FEEDBACK, AUTO, INITIALIZE, GAINS, AUTOTUNE, ATPARAMETERS, 0) ;
+OUTPUT := IPIDCONTROLLER_1.Output ;
+ABSOLUTEERROR := IPIDCONTROLLER_1.AbsoluteError ;
+ATWARNING := IPIDCONTROLLER_1.ATWarning ;
+OUTGAINS := IPIDCONTROLLER_1.OutGains ;
+END_IF ;
+__MO_IPIDCONTROLLER_1 := __EDTB8 ;
+__EDTB10 := __EDTB8 ;
+IF __EDTB10 THEN
+(* Operator output on : = with __EDTB9 *)
+__EDTB9 := (ALL_STATUS = 4) ;
+ELSE
+__EDTB9 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB9 ;
+__EDTB11 := __EDTB9 ;
+IF __EDTB11 THEN
+FREQUENCY_SET := (  OUTPUT) ;
+END_IF ;
+__MO_1GAIN_7 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+

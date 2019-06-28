@@ -18,12 +18,12 @@ __MO_HSC_1 := ALL_ENABLE ;
 (*Label :*)(**)
 __EDTB1 := ALL_ENABLE ;
 IF __EDTB1 THEN
-PULSECOUNT_REAL := ANY_TO_REAL(HSCAPPDATA.ACCUMULATOR) ;
+PULSE_REAL := ANY_TO_REAL(HSCAPPDATA.ACCUMULATOR) ;
 END_IF ;
 __MO_ANY_TO_REAL_1 := __EDTB1 ;
 __EDTB2 := __EDTB1 ;
 IF __EDTB2 THEN
-POS_MOVE := (PULSECOUNT_REAL / PULSE_2_DISTANCE) ;
+POS_MOVE := (PULSE_REAL / PULSE_2_DISTANCE) ;
 END_IF ;
 __MO_DIV_1 := __EDTB2 ;
 
@@ -35,21 +35,9 @@ __MO_DIV_1 := __EDTB2 ;
 (*Label :*)(**)
 __EDTB3 := ALL_ENABLE ;
 IF __EDTB3 THEN
-PULSECOUNT_ABS := ABS(PULSECOUNT_REAL) ;
+PULSE_ABS := ABS(PULSE_REAL) ;
 END_IF ;
 __MO_ABS_1 := __EDTB3 ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-(*Label :*)(**)
-__EDTB4 := ALL_ENABLE AND PULSECOUNT_RESET ;
-IF __EDTB4 THEN
-HSCAPPDATA.ACCUMULATOR := (  0) ;
-END_IF ;
-__MO_1GAIN_1 := __EDTB4 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -63,5 +51,4 @@ __GL __LG0000 ;
 (* __EDTB1 *)
 (* __EDTB2 *)
 (* __EDTB3 *)
-(* __EDTB4 *)
 

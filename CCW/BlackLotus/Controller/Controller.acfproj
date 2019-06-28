@@ -13,6 +13,7 @@
     <UniqueProjectId>{c3f2be71-34ef-4330-85e6-00554532d6bd}</UniqueProjectId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == '在线' " />
+  <PropertyGroup Condition=" '$(Configuration)' == '模拟' " />
   <Import Project="$(DevEnvDir)\PackagesToLoad\Targets\ISaGRAF.ISaGRAF5.targets" />
   <Import Project="$(DevEnvDir)\PackagesToLoad\Targets\ISaGRAF.CCW.targets" />
 </Project>

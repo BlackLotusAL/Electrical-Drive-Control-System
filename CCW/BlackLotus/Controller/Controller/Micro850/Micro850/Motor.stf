@@ -5,22 +5,22 @@ BOF
 
 (**)
 
-SOR  [0,1] (**) (**)  XIC  [1,0] (*Motor_Enable*) (**)  
- BST  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*True*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Start*) (**) )
-   NXB  FB  [2,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Stop*) (**) )
+SOR  [0,1] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  XIC  [2,0] (*Motor_Enable*) (**)  
+ BST  FB  [3,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*True*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Start*) (**) )
+   NXB  FB  [3,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Stop*) (**) )
  BND
 
-EOR [5,0]
+EOR [6,0]
 
 
 (**)
 
-SOR  [0,6] (**) (**)  XIO  [1,0] (*Motor_Enable*) (**)  
- BST  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*True*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Stop*) (**) )
-   NXB  FB  [2,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Start*) (**) )
+SOR  [0,6] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  XIO  [2,0] (*Motor_Enable*) (**)  
+ BST  FB  [3,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*True*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Stop*) (**) )
+   NXB  FB  [3,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Start*) (**) )
  BND
 
-EOR [5,0]
+EOR [6,0]
 
 
 (**)
@@ -45,13 +45,13 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,21] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*12*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Motor_SetSpeed*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SpeedRef*) (**) )
+SOR  [0,21] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*12*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SpeedRef*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,24] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*15*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SpeedFeedback*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Motor_SpeedFeedback*) (**) )
+SOR  [0,24] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*15*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SpeedFeedback*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Feedback*) (**) )
 EOR [5,0]
 
 
@@ -63,11 +63,23 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,44] (**) (**)
+SOR  [0,44] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  XIC  [2,0] (*Motor_Enable*) (**)  FB  [3,0] (*TON*) (*TON_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#10000s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(*Timer0_ms*) (**) )
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,47] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  XIC  [2,0] (*Motor_Enable*) (**)  FB  [3,0] (*ANY_TO_REAL*) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Timer0_ms*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Timer0_Real*) (**) )  FB  [6,0] (*/*) (*11*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Timer0_Real*) (**)  , (*i2:*)(*1000.0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Timer0_s*) (**) )  FB  [9,0] (*1 gain*) (*18*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Timer0_s*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*All_Time*) (**) )
+EOR [12,0]
+
+
+(**)
+
+SOR  [0,51] (**) (**)
 EOR [1,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=15
+NextId=18
 #end_info
 END_PROGRAM

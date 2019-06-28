@@ -9,10 +9,13 @@
   <AcfElementGuid Guid="1d58c1ef-400c-426f-8296-4b72aa4ff071">
     <File>Motor.AcfMlge</File>
   </AcfElementGuid>
-  <AcfElementGuid Guid="755ec2b8-10d9-4d19-8eab-687bd7f67ba0">
-    <File>Timer.AcfMlge</File>
+  <AcfElementGuid Guid="254af952-44c6-4766-bade-ed5d18508da5">
+    <File>Speed.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="a4d87612-a715-4dae-8615-4e93f6254eb1">
+    <File>Turnback.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="c5b0c5d8-1bf3-485c-af95-a5d9edb121a0">
-    <File>PID.AcfMlge</File>
+    <File>Pos.AcfMlge</File>
   </AcfElementGuid>
 </ProjectElements>

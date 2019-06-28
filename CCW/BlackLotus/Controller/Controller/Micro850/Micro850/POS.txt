@@ -19,7 +19,7 @@ __MO_1GAIN_1 := __EDTB1 ;
 (*Label :*)(**)
 __EDTB2 := ALL_ENABLE ;
 IF __EDTB2 THEN
-POS_FEEDBACK := (POS_MOVE + POS_COMP) ;
+POS_FEEDBACK := (POS_MOVE + POS_INIT) ;
 END_IF ;
 __MO_PLUS_1 := __EDTB2 ;
 __EDTB3 := __EDTB2 ;
@@ -81,37 +81,66 @@ END_IF ;
 __MO_ABS_1 := __EDTB13 ;
 __EDTB15 := __EDTB13 ;
 IF __EDTB15 THEN
-(* Operator output on : >= with __EDTB14 *)
-__EDTB14 := (POS_ERROR_ABS >= 3.0) ;
+(* Operator output on : = with __EDTB14 *)
+__EDTB14 := (ALL_STATUS = 1) ;
 ELSE
 __EDTB14 := FALSE ;
 END_IF ;
-__MO_GREATEQUAL_1 := __EDTB14 ;
+__MO_EQUAL_1 := __EDTB14 ;
 __EDTB16 := __EDTB14 ;
-IF __EDTB16 THEN
-PID_ENABLE := (  FALSE) ;
-END_IF ;
-__MO_1GAIN_5 := __EDTB16 ;
-__EDTB17 := __EDTB16 ;
-IF __EDTB17 THEN
-MOTOR_SETSPEED := (  40.0) ;
-END_IF ;
-__MO_1GAIN_6 := __EDTB17 ;
-__EDTB18 := __EDTB17 ;
-__EDTB20 := __EDTB13 ;
-IF __EDTB20 THEN
-(* Operator output on : < with __EDTB19 *)
-__EDTB19 := (POS_ERROR_ABS < 3.0) ;
+__EDTB18 := __EDTB13 ;
+IF __EDTB18 THEN
+(* Operator output on : = with __EDTB17 *)
+__EDTB17 := (ALL_STATUS = 2) ;
 ELSE
-__EDTB19 := FALSE ;
+__EDTB17 := FALSE ;
 END_IF ;
-__MO_LESS_2 := __EDTB19 ;
-__EDTB21 := __EDTB19 ;
-IF __EDTB21 THEN
-PID_ENABLE := (  TRUE) ;
+__MO_EQUAL_2 := __EDTB17 ;
+__EDTB19 := __EDTB17 ;
+__EDTB20 := (__EDTB16 OR __EDTB19) ;
+__EDTB22 := __EDTB20 ;
+IF __EDTB22 THEN
+(* Operator output on : >= with __EDTB21 *)
+__EDTB21 := (POS_ERROR_ABS >= 3.0) ;
+ELSE
+__EDTB21 := FALSE ;
 END_IF ;
-__MO_1GAIN_7 := __EDTB21 ;
-__EDTB22 := __EDTB21 ;
+__MO_GREATEQUAL_1 := __EDTB21 ;
+__EDTB23 := __EDTB21 ;
+IF __EDTB23 THEN
+POS_PID_ENABLE := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB23 ;
+__EDTB24 := __EDTB23 ;
+IF __EDTB24 THEN
+FREQUENCY_SET := (  40.0) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB24 ;
+__EDTB25 := __EDTB24 ;
+__EDTB27 := __EDTB20 ;
+IF __EDTB27 THEN
+(* Operator output on : < with __EDTB26 *)
+__EDTB26 := (POS_ERROR_ABS < 3.0) ;
+ELSE
+__EDTB26 := FALSE ;
+END_IF ;
+__MO_LESS_2 := __EDTB26 ;
+__EDTB28 := __EDTB26 ;
+IF __EDTB28 THEN
+POS_PID_ENABLE := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_7 := __EDTB28 ;
+__EDTB29 := __EDTB28 ;
+__EDTB30 := (__EDTB25 OR __EDTB29) ;
+__EDTB32 := __EDTB13 ;
+IF __EDTB32 THEN
+(* Operator output on : = with __EDTB31 *)
+__EDTB31 := (ALL_STATUS = 3) ;
+ELSE
+__EDTB31 := FALSE ;
+END_IF ;
+__MO_EQUAL_3 := __EDTB31 ;
+__EDTB33 := __EDTB31 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -119,19 +148,38 @@ __EDTB22 := __EDTB21 ;
 (*************** Rung **********************************)
 (**)
 (*Label :*)(**)
-__EDTB24 := ALL_ENABLE AND PID_ENABLE ;
-IF __EDTB24 THEN
-(* Operator output on : <= with __EDTB23 *)
-__EDTB23 := (POS_ERROR_ABS <= POS_ERROR_THRESHOLD) ;
+__EDTB34 := ALL_ENABLE AND POS_PID_ENABLE ;
+__EDTB36 := __EDTB34 ;
+IF __EDTB36 THEN
+(* Operator output on : = with __EDTB35 *)
+__EDTB35 := (ALL_STATUS = 1) ;
 ELSE
-__EDTB23 := FALSE ;
+__EDTB35 := FALSE ;
 END_IF ;
-__MO_LESSEQUAL_1 := __EDTB23 ;
-__EDTB25 := __EDTB23 ;
-IF __EDTB25 THEN
+__MO_EQUAL_4 := __EDTB35 ;
+__EDTB37 := __EDTB35 ;
+__EDTB39 := __EDTB34 ;
+IF __EDTB39 THEN
+(* Operator output on : = with __EDTB38 *)
+__EDTB38 := (ALL_STATUS = 4) ;
+ELSE
+__EDTB38 := FALSE ;
+END_IF ;
+__MO_EQUAL_5 := __EDTB38 ;
+__EDTB40 := __EDTB38 ;
+__EDTB42 := (__EDTB37 OR __EDTB40) ;
+IF __EDTB42 THEN
+(* Operator output on : <= with __EDTB41 *)
+__EDTB41 := (POS_ERROR_ABS <= POS_ERROR_THRESHOLD) ;
+ELSE
+__EDTB41 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB41 ;
+__EDTB43 := __EDTB41 ;
+IF __EDTB43 THEN
 MOTOR_ENABLE := (  FALSE) ;
 END_IF ;
-__MO_1GAIN_8 := __EDTB25 ;
+__MO_1GAIN_8 := __EDTB43 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -139,11 +187,11 @@ __MO_1GAIN_8 := __EDTB25 ;
 (*************** Rung **********************************)
 (**)
 (*Label :*)(**)
-__EDTB26 := ALL_ENABLE ;
-IF __EDTB26 THEN
-GAINS.PROPORTIONALGAIN := (  PID_KP) ;
+__EDTB44 := ALL_ENABLE ;
+IF __EDTB44 THEN
+GAINS.PROPORTIONALGAIN := (  POS_KP) ;
 END_IF ;
-__MO_1GAIN_9 := __EDTB26 ;
+__MO_1GAIN_9 := __EDTB44 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -151,11 +199,11 @@ __MO_1GAIN_9 := __EDTB26 ;
 (*************** Rung **********************************)
 (**)
 (*Label :*)(**)
-__EDTB27 := ALL_ENABLE ;
-IF __EDTB27 THEN
-GAINS.TIMEINTEGRAL := (  PID_KI) ;
+__EDTB45 := ALL_ENABLE ;
+IF __EDTB45 THEN
+GAINS.TIMEINTEGRAL := (  POS_TI) ;
 END_IF ;
-__MO_1GAIN_10 := __EDTB27 ;
+__MO_1GAIN_10 := __EDTB45 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -163,11 +211,11 @@ __MO_1GAIN_10 := __EDTB27 ;
 (*************** Rung **********************************)
 (**)
 (*Label :*)(**)
-__EDTB28 := ALL_ENABLE ;
-IF __EDTB28 THEN
-GAINS.TIMEDERIVATIVE := (  PID_KD) ;
+__EDTB46 := ALL_ENABLE ;
+IF __EDTB46 THEN
+GAINS.TIMEDERIVATIVE := (  POS_TD) ;
 END_IF ;
-__MO_1GAIN_11 := __EDTB28 ;
+__MO_1GAIN_11 := __EDTB46 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -175,16 +223,29 @@ __MO_1GAIN_11 := __EDTB28 ;
 (*************** Rung **********************************)
 (**)
 (*Label :*)(**)
-__EDTB29 := ALL_ENABLE AND PID_ENABLE ;
-IF __EDTB29 THEN
+__EDTB47 := ALL_ENABLE AND POS_PID_ENABLE ;
+IF __EDTB47 THEN
 (* FB call: IPIDCONTROLLER *)
-IPIDCONTROLLER_1(PROCESS, SETPOINT, FEEDBACK, AUTO, INITIALIZE, GAINS, AUTO, ATPARAMETERS, 0) ;
+IPIDCONTROLLER_1(PROCESS, SETPOINT, FEEDBACK, AUTO, INITIALIZE, GAINS, AUTOTUNE, ATPARAMETERS, 0) ;
 OUTPUT := IPIDCONTROLLER_1.Output ;
 ABSOLUTEERROR := IPIDCONTROLLER_1.AbsoluteError ;
 ATWARNING := IPIDCONTROLLER_1.ATWarning ;
 OUTGAINS := IPIDCONTROLLER_1.OutGains ;
 END_IF ;
-__MO_IPIDCONTROLLER_1 := __EDTB29 ;
+__MO_IPIDCONTROLLER_1 := __EDTB47 ;
+__EDTB49 := __EDTB47 ;
+IF __EDTB49 THEN
+(* Operator output on : = with __EDTB48 *)
+__EDTB48 := (ALL_STATUS = 5) ;
+ELSE
+__EDTB48 := FALSE ;
+END_IF ;
+__MO_EQUAL_6 := __EDTB48 ;
+__EDTB50 := __EDTB48 ;
+IF __EDTB50 THEN
+FREQUENCY_SET := (  OUTPUT) ;
+END_IF ;
+__MO_1GAIN_12 := __EDTB50 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -224,4 +285,25 @@ __GL __LG0000 ;
 (* __EDTB27 *)
 (* __EDTB28 *)
 (* __EDTB29 *)
+(* __EDTB30 *)
+(* __EDTB31 *)
+(* __EDTB32 *)
+(* __EDTB33 *)
+(* __EDTB34 *)
+(* __EDTB35 *)
+(* __EDTB36 *)
+(* __EDTB37 *)
+(* __EDTB38 *)
+(* __EDTB39 *)
+(* __EDTB40 *)
+(* __EDTB41 *)
+(* __EDTB42 *)
+(* __EDTB43 *)
+(* __EDTB44 *)
+(* __EDTB45 *)
+(* __EDTB46 *)
+(* __EDTB47 *)
+(* __EDTB48 *)
+(* __EDTB49 *)
+(* __EDTB50 *)
 
