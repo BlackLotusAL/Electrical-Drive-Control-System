@@ -1,0 +1,39 @@
+PROGRAM Hurdle
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*=*) (*16*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*3*) (**) ; (*o1:*)(**) (**) )  
+ BST  FB  [5,0] (*=*) (*17*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Status*) (**)  , (*i2:*)(*1*) (**) ; (*o1:*)(**) (**) )  FB  [8,0] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Pos1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Set*) (**) )  FB  [11,0] (*-*) (*43*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Set*) (**)  , (*i2:*)(*Pos_Feedback*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Error*) (**) )  FB  [14,0] (*ABS*) (*44*) ( (*EN:EN*)(**) (**)  , (*IN:IN*)(*Pos_Error*) (**) ; (*ENO:ENO*)(**) (**)  , (*ABS:Q*)(*Pos_Error_Abs*) (**) )  FB  [17,0] (*<=*) (*19*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Error_Abs*) (**)  , (*i2:*)(*Hurdle_Threshold*) (**) ; (*o1:*)(**) (**) )  FB  [20,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Speed1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )  FB  [23,0] (*1 gain*) (*20*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Hurdle_Status*) (**) )
+   NXB  
+ BST  FB  [5,3] (*=*) (*21*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Status*) (**)  , (*i2:*)(*2*) (**) ; (*o1:*)(**) (**) )  FB  [8,3] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Pos2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Set*) (**) )  FB  [11,3] (*-*) (*43*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Set*) (**)  , (*i2:*)(*Pos_Feedback*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Error*) (**) )  FB  [14,3] (*ABS*) (*44*) ( (*EN:EN*)(**) (**)  , (*IN:IN*)(*Pos_Error*) (**) ; (*ENO:ENO*)(**) (**)  , (*ABS:Q*)(*Pos_Error_Abs*) (**) )  
+ BST  FB  [17,3] (*>*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Feedback*) (**)  , (*i2:*)(*Hurdle_Pos1*) (**) ; (*o1:*)(**) (**) )  FB  [20,3] (*1 gain*) (*24*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Speed4*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
+   NXB  FB  [17,6] (*<=*) (*23*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Error_Abs*) (**)  , (*i2:*)(*Hurdle_Threshold*) (**) ; (*o1:*)(**) (**) )  FB  [20,6] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Speed2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )  FB  [23,6] (*1 gain*) (*20*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*3*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Hurdle_Status*) (**) )
+ BND
+
+   NXB  
+ BST  FB  [5,9] (*=*) (*25*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Status*) (**)  , (*i2:*)(*3*) (**) ; (*o1:*)(**) (**) )  FB  [8,9] (*1 gain*) (*8*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Pos3*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Set*) (**) )  FB  [11,9] (*-*) (*43*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Set*) (**)  , (*i2:*)(*Pos_Feedback*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Error*) (**) )  FB  [14,9] (*ABS*) (*44*) ( (*EN:EN*)(**) (**)  , (*IN:IN*)(*Pos_Error*) (**) ; (*ENO:ENO*)(**) (**)  , (*ABS:Q*)(*Pos_Error_Abs*) (**) )  
+ BST  FB  [17,9] (*>*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Feedback*) (**)  , (*i2:*)(*Hurdle_Pos2*) (**) ; (*o1:*)(**) (**) )  FB  [20,9] (*1 gain*) (*28*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Speed4*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
+   NXB  FB  [17,12] (*<=*) (*27*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Error_Abs*) (**)  , (*i2:*)(*Hurdle_Threshold*) (**) ; (*o1:*)(**) (**) )  FB  [20,12] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Speed3*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )  FB  [23,12] (*1 gain*) (*20*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*4*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Hurdle_Status*) (**) )
+ BND
+
+   NXB  FB  [5,15] (*=*) (*29*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Status*) (**)  , (*i2:*)(*4*) (**) ; (*o1:*)(**) (**) )  FB  [8,15] (*1 gain*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Pos4*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Set*) (**) )  FB  [11,15] (*-*) (*43*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Set*) (**)  , (*i2:*)(*Pos_Feedback*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Error*) (**) )  FB  [14,15] (*ABS*) (*44*) ( (*EN:EN*)(**) (**)  , (*IN:IN*)(*Pos_Error*) (**) ; (*ENO:ENO*)(**) (**)  , (*ABS:Q*)(*Pos_Error_Abs*) (**) )  
+ BST  FB  [17,15] (*>*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Feedback*) (**)  , (*i2:*)(*Hurdle_Pos3*) (**) ; (*o1:*)(**) (**) )  FB  [20,15] (*1 gain*) (*28*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Speed4*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
+   NXB  FB  [17,18] (*<=*) (*27*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Error_Abs*) (**)  , (*i2:*)(*Pos_Error_Threshold*) (**) ; (*o1:*)(**) (**) )  FB  [20,18] (*1 gain*) (*28*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Hurdle_Status*) (**) )  FB  [23,18] (*1 gain*) (*35*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hurdle_Pos1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Set*) (**) )  FB  [26,18] (*1 gain*) (*33*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Motor_Enable*) (**) )
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [29,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=19
+#end_info
+END_PROGRAM

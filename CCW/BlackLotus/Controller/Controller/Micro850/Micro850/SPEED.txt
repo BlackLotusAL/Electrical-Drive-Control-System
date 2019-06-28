@@ -99,7 +99,7 @@ __MO_IPIDCONTROLLER_1 := __EDTB8 ;
 __EDTB10 := __EDTB8 ;
 IF __EDTB10 THEN
 (* Operator output on : = with __EDTB9 *)
-__EDTB9 := (ALL_STATUS = 4) ;
+__EDTB9 := (ALL_STATUS = 0) ;
 ELSE
 __EDTB9 := FALSE ;
 END_IF ;

@@ -12,6 +12,9 @@
   <AcfElementGuid Guid="254af952-44c6-4766-bade-ed5d18508da5">
     <File>Speed.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="38e817b5-5982-40c3-96b3-285d3dad2e76">
+    <File>Hurdle.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="a4d87612-a715-4dae-8615-4e93f6254eb1">
     <File>Turnback.AcfMlge</File>
   </AcfElementGuid>

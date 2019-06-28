@@ -11,7 +11,7 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,4] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Move*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*XIN*) (**) )
+SOR  [0,4] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Move*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*XIN*) (**) )
 EOR [5,0]
 
 
@@ -35,17 +35,17 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,17] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*31*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Td*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Gains.TimeDerivative*) (**) )
+SOR  [0,17] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Td*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Gains.TimeDerivative*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,20] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*IPIDCONTROLLER*) (*IPIDCONTROLLER_1*) ( (*EN:EN*)(**) (**)  , (*Process:P*)(*Process*) (**)  , (*SetPoint:SP*)(*SetPoint*) (**)  , (*FeedBack:FB*)(*Feedback*) (**)  , (*Auto:AUTO*)(*Auto*) (**)  , (*Initialize:INIT*)(*Initialize*) (**)  , (*Gains:GNS*)(*Gains*) (**)  , (*AutoTune:ATUN*)(*AutoTune*) (**)  , (*ATParameters:ATPA*)(*ATParameters*) (**)  , (*ErrorMode:ERR*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Output:OUT*)(*Output*) (**)  , (*AbsoluteError:AERR*)(*AbsoluteError*) (**)  , (*ATWarning:ATW*)(*ATWarning*) (**)  , (*OutGains:OGNS*)(*OutGains*) (**) )  FB  [5,0] (*=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*4*) (**) ; (*o1:*)(**) (**) )  FB  [8,0] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Output*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
+SOR  [0,20] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*IPIDCONTROLLER*) (*IPIDCONTROLLER_1*) ( (*EN:EN*)(**) (**)  , (*Process:P*)(*Process*) (**)  , (*SetPoint:SP*)(*SetPoint*) (**)  , (*FeedBack:FB*)(*Feedback*) (**)  , (*Auto:AUTO*)(*Auto*) (**)  , (*Initialize:INIT*)(*Initialize*) (**)  , (*Gains:GNS*)(*Gains*) (**)  , (*AutoTune:ATUN*)(*AutoTune*) (**)  , (*ATParameters:ATPA*)(*ATParameters*) (**)  , (*ErrorMode:ERR*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Output:OUT*)(*Output*) (**)  , (*AbsoluteError:AERR*)(*AbsoluteError*) (**)  , (*ATWarning:ATW*)(*ATWarning*) (**)  , (*OutGains:OGNS*)(*OutGains*) (**) )  FB  [5,0] (*=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  FB  [8,0] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Output*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
 EOR [11,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=4
+NextId=10
 #end_info
 END_PROGRAM

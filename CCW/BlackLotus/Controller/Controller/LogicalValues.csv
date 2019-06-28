@@ -4,6 +4,12 @@ Controller.<>.o1
 Controller.=.i1	
 Controller.=.i2	
 Controller.=.o1	
+Controller.>.i1	
+Controller.>.i2	
+Controller.>.o1	
+Controller.>=.i1	
+Controller.>=.i2	
+Controller.>=.o1	
 Controller.1 gain.i1	
 Controller.1 gain.o1	
 Controller.Micro850.Micro850.__SYSVA_ABORT_CYCLE	
@@ -137,6 +143,16 @@ Controller.Micro850.Micro850.Encoder.Pulse_Real
 Controller.Micro850.Micro850.Encoder.Sts	
 Controller.Micro850.Micro850.Frequency_Feedback	
 Controller.Micro850.Micro850.Frequency_Set	
+Controller.Micro850.Micro850.Hurdle_Pos1	
+Controller.Micro850.Micro850.Hurdle_Pos2	
+Controller.Micro850.Micro850.Hurdle_Pos3	
+Controller.Micro850.Micro850.Hurdle_Pos4	
+Controller.Micro850.Micro850.Hurdle_Speed1	
+Controller.Micro850.Micro850.Hurdle_Speed2	
+Controller.Micro850.Micro850.Hurdle_Speed3	
+Controller.Micro850.Micro850.Hurdle_Speed4	
+Controller.Micro850.Micro850.Hurdle_Status	
+Controller.Micro850.Micro850.Hurdle_Threshold	
 Controller.Micro850.Micro850.Motor.AccelTime1	
 Controller.Micro850.Micro850.Motor.ClrFault	
 Controller.Micro850.Micro850.Motor.DecelTime1	
