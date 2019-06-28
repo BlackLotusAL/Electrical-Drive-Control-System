@@ -35,19 +35,25 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,16] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*IPIDCONTROLLER*) (*IPIDCONTROLLER_1*) ( (*EN:EN*)(**) (**)  , (*Process:P*)(*Process*) (**)  , (*SetPoint:SP*)(*SetPoint*) (**)  , (*FeedBack:FB*)(*Feedback*) (**)  , (*Auto:AUTO*)(*Auto*) (**)  , (*Initialize:INIT*)(*Initialize*) (**)  , (*Gains:GNS*)(*Gains*) (**)  , (*AutoTune:ATUN*)(*AutoTune*) (**)  , (*ATParameters:ATPA*)(*ATParameters*) (**)  , (*ErrorMode:ERR*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Output:OUT*)(*Output*) (**)  , (*AbsoluteError:AERR*)(*AbsoluteError*) (**)  , (*ATWarning:ATW*)(*ATWarning*) (**)  , (*OutGains:OGNS*)(*OutGains*) (**) )  
- BST  FB  [5,0] (*=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  XIC  [8,0] (*Speed_PID_Enable*) (**)
-   NXB  FB  [5,3] (*=*) (*38*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*3*) (**) ; (*o1:*)(**) (**) )
+SOR  [0,16] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*18*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Td*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Gains.TimeDerivative*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,19] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  
+ BST  FB  [2,0] (*=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*3*) (**) ; (*o1:*)(**) (**) )
+   NXB  FB  [2,3] (*=*) (*45*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*4*) (**) ; (*o1:*)(**) (**) )
  BND
-  FB  [9,0] (***) (*26*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Output*) (**)  , (*i2:*)(*Speed_2_Frequency_k*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set_Temp*) (**) )  FB  [12,0] (*+*) (*37*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_Temp*) (**)  , (*i2:*)(*Speed_2_Frequency_b*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set_Temp1*) (**) )  
- BST  FB  [15,0] (*<=*) (*17*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_Temp1*) (**)  , (*i2:*)(*40.0*) (**) ; (*o1:*)(**) (**) )  FB  [18,0] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_Temp1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
-   NXB  FB  [15,3] (*>*) (*20*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_Temp1*) (**)  , (*i2:*)(*40.0*) (**) ; (*o1:*)(**) (**) )  FB  [18,3] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*40.0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
+  FB  [5,0] (*IPIDCONTROLLER*) (*IPIDCONTROLLER_1*) ( (*EN:EN*)(**) (**)  , (*Process:P*)(*Process*) (**)  , (*SetPoint:SP*)(*SetPoint*) (**)  , (*FeedBack:FB*)(*Feedback*) (**)  , (*Auto:AUTO*)(*Auto*) (**)  , (*Initialize:INIT*)(*Initialize*) (**)  , (*Gains:GNS*)(*Gains*) (**)  , (*AutoTune:ATUN*)(*AutoTune*) (**)  , (*ATParameters:ATPA*)(*ATParameters*) (**)  , (*ErrorMode:ERR*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Output:OUT*)(*Output*) (**)  , (*AbsoluteError:AERR*)(*AbsoluteError*) (**)  , (*ATWarning:ATW*)(*ATWarning*) (**)  , (*OutGains:OGNS*)(*OutGains*) (**) )  FB  [8,0] (***) (*26*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Output*) (**)  , (*i2:*)(*Speed_2_Frequency_k*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set_k*) (**) )  FB  [11,0] (*+*) (*37*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_k*) (**)  , (*i2:*)(*Speed_2_Frequency_b*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set_k_b*) (**) )  
+ BST  FB  [14,0] (*<=*) (*17*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_k_b*) (**)  , (*i2:*)(*50.0*) (**) ; (*o1:*)(**) (**) )  FB  [17,0] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_k_b*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
+   NXB  FB  [14,3] (*>*) (*20*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_k_b*) (**)  , (*i2:*)(*50.0*) (**) ; (*o1:*)(**) (**) )  FB  [17,3] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*40.0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
  BND
 
-EOR [21,0]
+EOR [20,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=44
+NextId=45
 #end_info
 END_PROGRAM

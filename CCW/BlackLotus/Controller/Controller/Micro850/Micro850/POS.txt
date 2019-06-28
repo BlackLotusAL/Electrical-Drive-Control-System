@@ -65,20 +65,8 @@ __MO_1GAIN_5 := __EDTB5 ;
 (*************** Rung **********************************)
 (**)
 (*Label :*)(**)
-__EDTB6 := ALL_ENABLE ;
+__EDTB6 := ALL_ENABLE AND POS_PID_ENABLE ;
 IF __EDTB6 THEN
-GAINS.TIMEDERIVATIVE := (  POS_TD) ;
-END_IF ;
-__MO_1GAIN_6 := __EDTB6 ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-(*Label :*)(**)
-__EDTB7 := ALL_ENABLE AND POS_PID_ENABLE ;
-IF __EDTB7 THEN
 (* FB call: IPIDCONTROLLER *)
 IPIDCONTROLLER_1(PROCESS, SETPOINT, FEEDBACK, AUTO, INITIALIZE, GAINS, AUTOTUNE, ATPARAMETERS, 0) ;
 OUTPUT := IPIDCONTROLLER_1.Output ;
@@ -86,48 +74,48 @@ ABSOLUTEERROR := IPIDCONTROLLER_1.AbsoluteError ;
 ATWARNING := IPIDCONTROLLER_1.ATWarning ;
 OUTGAINS := IPIDCONTROLLER_1.OutGains ;
 END_IF ;
-__MO_IPIDCONTROLLER_1 := __EDTB7 ;
+__MO_IPIDCONTROLLER_1 := __EDTB6 ;
+__EDTB8 := __EDTB6 ;
+IF __EDTB8 THEN
+(* Operator output on : = with __EDTB7 *)
+__EDTB7 := (ALL_STATUS = 99) ;
+ELSE
+__EDTB7 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB7 ;
 __EDTB9 := __EDTB7 ;
 IF __EDTB9 THEN
-(* Operator output on : = with __EDTB8 *)
-__EDTB8 := (ALL_STATUS = 11) ;
-ELSE
-__EDTB8 := FALSE ;
-END_IF ;
-__MO_EQUAL_1 := __EDTB8 ;
-__EDTB10 := __EDTB8 ;
-IF __EDTB10 THEN
 FREQUENCY_SET_TEMP := (OUTPUT + 10.0) ;
 END_IF ;
-__MO_PLUS_1 := __EDTB10 ;
+__MO_PLUS_1 := __EDTB9 ;
+__EDTB11 := __EDTB9 ;
+IF __EDTB11 THEN
+(* Operator output on : <= with __EDTB10 *)
+__EDTB10 := (FREQUENCY_SET_TEMP <= 40.0) ;
+ELSE
+__EDTB10 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB10 ;
 __EDTB12 := __EDTB10 ;
 IF __EDTB12 THEN
-(* Operator output on : <= with __EDTB11 *)
-__EDTB11 := (FREQUENCY_SET_TEMP <= 40.0) ;
-ELSE
-__EDTB11 := FALSE ;
-END_IF ;
-__MO_LESSEQUAL_1 := __EDTB11 ;
-__EDTB13 := __EDTB11 ;
-IF __EDTB13 THEN
 FREQUENCY_SET := (  FREQUENCY_SET_TEMP) ;
 END_IF ;
-__MO_1GAIN_7 := __EDTB13 ;
-__EDTB14 := __EDTB13 ;
-__EDTB16 := __EDTB10 ;
-IF __EDTB16 THEN
-(* Operator output on : > with __EDTB15 *)
-__EDTB15 := (FREQUENCY_SET_TEMP > 40.0) ;
+__MO_1GAIN_6 := __EDTB12 ;
+__EDTB13 := __EDTB12 ;
+__EDTB15 := __EDTB9 ;
+IF __EDTB15 THEN
+(* Operator output on : > with __EDTB14 *)
+__EDTB14 := (FREQUENCY_SET_TEMP > 40.0) ;
 ELSE
-__EDTB15 := FALSE ;
+__EDTB14 := FALSE ;
 END_IF ;
-__MO_GREAT_1 := __EDTB15 ;
-__EDTB17 := __EDTB15 ;
-IF __EDTB17 THEN
+__MO_GREAT_1 := __EDTB14 ;
+__EDTB16 := __EDTB14 ;
+IF __EDTB16 THEN
 FREQUENCY_SET := (  40.0) ;
 END_IF ;
-__MO_1GAIN_8 := __EDTB17 ;
-__EDTB18 := __EDTB17 ;
+__MO_1GAIN_7 := __EDTB16 ;
+__EDTB17 := __EDTB16 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -155,5 +143,4 @@ __GL __LG0000 ;
 (* __EDTB15 *)
 (* __EDTB16 *)
 (* __EDTB17 *)
-(* __EDTB18 *)
 

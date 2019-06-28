@@ -15,12 +15,12 @@ END_IF ;
 __MO_EQUAL_1 := __EDTB1 ;
 __EDTB3 := __EDTB1 ;
 IF __EDTB3 THEN
-POS_FEEDBACK := (POS_MOVE + POS_INIT) ;
+POS_FEEDBACK := (POS_MOVE + POS_COMP) ;
 END_IF ;
 __MO_PLUS_1 := __EDTB3 ;
 __EDTB4 := __EDTB3 ;
 IF __EDTB4 THEN
-POS_ERROR := (POS_SET - POS_FEEDBACK) ;
+POS_ERROR := (POS_END - POS_FEEDBACK) ;
 END_IF ;
 __MO_MINUS_1 := __EDTB4 ;
 __EDTB5 := __EDTB4 ;
@@ -147,13 +147,6 @@ IF __EDTB31 THEN
 MOTOR_ENABLE := (  FALSE) ;
 END_IF ;
 __MO_1GAIN_6 := __EDTB31 ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-(*Label :*)(**)
 
 (*************** Code for the end of Rung **************)
 

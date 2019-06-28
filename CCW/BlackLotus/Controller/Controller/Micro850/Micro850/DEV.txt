@@ -8,14 +8,14 @@
 __EDTB2 := ALL_ENABLE ;
 IF __EDTB2 THEN
 (* Operator output on : = with __EDTB1 *)
-__EDTB1 := (ALL_STATUS = 0) ;
+__EDTB1 := (ALL_STATUS = 4) ;
 ELSE
 __EDTB1 := FALSE ;
 END_IF ;
 __MO_EQUAL_1 := __EDTB1 ;
 (* FB call: TON *)
-TON_1(__EDTB1 AND MOTOR_ENABLE AND TIMER_ENABLE, T#10000S) ;
-TIMER5_MS := TON_1.ET ;
+TON_1(__EDTB1 AND MOTOR_ENABLE AND TIMER4_ENABLE, T#10000S) ;
+TIMER4_MS := TON_1.ET ;
 
 (*************** Code for the end of Rung **************)
 
@@ -26,19 +26,19 @@ TIMER5_MS := TON_1.ET ;
 __EDTB4 := ALL_ENABLE ;
 IF __EDTB4 THEN
 (* Operator output on : = with __EDTB3 *)
-__EDTB3 := (ALL_STATUS = 0) ;
+__EDTB3 := (ALL_STATUS = 4) ;
 ELSE
 __EDTB3 := FALSE ;
 END_IF ;
 __MO_EQUAL_2 := __EDTB3 ;
-__EDTB5 := __EDTB3 AND MOTOR_ENABLE AND TIMER_ENABLE ;
+__EDTB5 := __EDTB3 AND MOTOR_ENABLE AND TIMER4_ENABLE ;
 IF __EDTB5 THEN
-TIMER5_REAL := ANY_TO_REAL(TIMER5_MS) ;
+TIMER4_REAL := ANY_TO_REAL(TIMER4_MS) ;
 END_IF ;
 __MO_ANY_TO_REAL_1 := __EDTB5 ;
 __EDTB6 := __EDTB5 ;
 IF __EDTB6 THEN
-TIMER5_S := (TIMER5_REAL / 1000.0) ;
+TIMER4_S := (TIMER4_REAL / 1000.0) ;
 END_IF ;
 __MO_DIV_1 := __EDTB6 ;
 
@@ -51,7 +51,7 @@ __MO_DIV_1 := __EDTB6 ;
 __EDTB8 := ALL_ENABLE ;
 IF __EDTB8 THEN
 (* Operator output on : = with __EDTB7 *)
-__EDTB7 := (ALL_STATUS = 0) ;
+__EDTB7 := (ALL_STATUS = 4) ;
 ELSE
 __EDTB7 := FALSE ;
 END_IF ;
@@ -74,7 +74,7 @@ END_IF ;
 __MO_LESS_1 := __EDTB11 ;
 __EDTB13 := __EDTB11 ;
 IF __EDTB13 THEN
-TIMER_ENABLE := (  TRUE) ;
+TIMER4_ENABLE := (  TRUE) ;
 END_IF ;
 __MO_1GAIN_1 := __EDTB13 ;
 __EDTB14 := __EDTB13 ;
@@ -88,7 +88,7 @@ END_IF ;
 __MO_LESS_2 := __EDTB15 ;
 __EDTB17 := __EDTB15 ;
 IF __EDTB17 THEN
-TIMER_ENABLE := (  FALSE) ;
+TIMER4_ENABLE := (  FALSE) ;
 END_IF ;
 __MO_1GAIN_2 := __EDTB17 ;
 __EDTB18 := __EDTB17 ;
@@ -102,7 +102,7 @@ END_IF ;
 __MO_GREAT_2 := __EDTB19 ;
 __EDTB21 := __EDTB19 ;
 IF __EDTB21 THEN
-TIMER_ENABLE := (  FALSE) ;
+TIMER4_ENABLE := (  FALSE) ;
 END_IF ;
 __MO_1GAIN_3 := __EDTB21 ;
 __EDTB22 := __EDTB21 ;
@@ -117,19 +117,19 @@ __EDTB23 := (__EDTB18 OR __EDTB22) ;
 __EDTB25 := ALL_ENABLE ;
 IF __EDTB25 THEN
 (* Operator output on : = with __EDTB24 *)
-__EDTB24 := (ALL_STATUS = 0) ;
+__EDTB24 := (ALL_STATUS = 4) ;
 ELSE
 __EDTB24 := FALSE ;
 END_IF ;
 __MO_EQUAL_4 := __EDTB24 ;
 __EDTB26 := __EDTB24 ;
 IF __EDTB26 THEN
-POS_FEEDBACK := (POS_MOVE + POS_INIT) ;
+POS_FEEDBACK := (POS_MOVE + POS_COMP) ;
 END_IF ;
 __MO_PLUS_1 := __EDTB26 ;
 __EDTB27 := __EDTB26 ;
 IF __EDTB27 THEN
-POS_ERROR := (POS_SET - POS_FEEDBACK) ;
+POS_ERROR := (POS_END - POS_FEEDBACK) ;
 END_IF ;
 __MO_MINUS_1 := __EDTB27 ;
 __EDTB28 := __EDTB27 ;
@@ -147,7 +147,7 @@ __MO_ABS_1 := __EDTB28 ;
 __EDTB30 := ALL_ENABLE ;
 IF __EDTB30 THEN
 (* Operator output on : = with __EDTB29 *)
-__EDTB29 := (ALL_STATUS = 0) ;
+__EDTB29 := (ALL_STATUS = 4) ;
 ELSE
 __EDTB29 := FALSE ;
 END_IF ;
@@ -190,7 +190,7 @@ __EDTB38 := __EDTB37 ;
 __EDTB40 := ALL_ENABLE ;
 IF __EDTB40 THEN
 (* Operator output on : = with __EDTB39 *)
-__EDTB39 := (ALL_STATUS = 0) ;
+__EDTB39 := (ALL_STATUS = 4) ;
 ELSE
 __EDTB39 := FALSE ;
 END_IF ;
@@ -209,25 +209,20 @@ POS_PID_ENABLE := (  FALSE) ;
 END_IF ;
 __MO_1GAIN_6 := __EDTB43 ;
 __EDTB44 := __EDTB43 ;
-IF __EDTB44 THEN
-SPEED_PID_ENABLE := (  TRUE) ;
-END_IF ;
-__MO_1GAIN_7 := __EDTB44 ;
-__EDTB45 := __EDTB44 ;
-__EDTB47 := __EDTB39 ;
-IF __EDTB47 THEN
-(* Operator output on : < with __EDTB46 *)
-__EDTB46 := (POS_ERROR_ABS < 3.0) ;
+__EDTB46 := __EDTB39 ;
+IF __EDTB46 THEN
+(* Operator output on : < with __EDTB45 *)
+__EDTB45 := (POS_ERROR_ABS < 3.0) ;
 ELSE
-__EDTB46 := FALSE ;
+__EDTB45 := FALSE ;
 END_IF ;
-__MO_LESS_4 := __EDTB46 ;
-__EDTB48 := __EDTB46 ;
-IF __EDTB48 THEN
+__MO_LESS_4 := __EDTB45 ;
+__EDTB47 := __EDTB45 ;
+IF __EDTB47 THEN
 POS_PID_ENABLE := (  TRUE) ;
 END_IF ;
-__MO_1GAIN_8 := __EDTB48 ;
-__EDTB49 := __EDTB48 ;
+__MO_1GAIN_7 := __EDTB47 ;
+__EDTB48 := __EDTB47 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -235,27 +230,27 @@ __EDTB49 := __EDTB48 ;
 (*************** Rung **********************************)
 (**)
 (*Label :*)(**)
-__EDTB51 := ALL_ENABLE ;
-IF __EDTB51 THEN
-(* Operator output on : = with __EDTB50 *)
-__EDTB50 := (ALL_STATUS = 0) ;
+__EDTB50 := ALL_ENABLE ;
+IF __EDTB50 THEN
+(* Operator output on : = with __EDTB49 *)
+__EDTB49 := (ALL_STATUS = 4) ;
 ELSE
-__EDTB50 := FALSE ;
+__EDTB49 := FALSE ;
 END_IF ;
-__MO_EQUAL_7 := __EDTB50 ;
-__EDTB53 := __EDTB50 AND POS_PID_ENABLE ;
+__MO_EQUAL_7 := __EDTB49 ;
+__EDTB52 := __EDTB49 AND POS_PID_ENABLE ;
+IF __EDTB52 THEN
+(* Operator output on : <= with __EDTB51 *)
+__EDTB51 := (POS_ERROR_ABS <= POS_ERROR_THRESHOLD) ;
+ELSE
+__EDTB51 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB51 ;
+__EDTB53 := __EDTB51 ;
 IF __EDTB53 THEN
-(* Operator output on : <= with __EDTB52 *)
-__EDTB52 := (POS_ERROR_ABS <= POS_ERROR_THRESHOLD) ;
-ELSE
-__EDTB52 := FALSE ;
-END_IF ;
-__MO_LESSEQUAL_1 := __EDTB52 ;
-__EDTB54 := __EDTB52 ;
-IF __EDTB54 THEN
 MOTOR_ENABLE := (  FALSE) ;
 END_IF ;
-__MO_1GAIN_9 := __EDTB54 ;
+__MO_1GAIN_8 := __EDTB53 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -319,5 +314,4 @@ __GL __LG0000 ;
 (* __EDTB51 *)
 (* __EDTB52 *)
 (* __EDTB53 *)
-(* __EDTB54 *)
 

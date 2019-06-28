@@ -140,7 +140,7 @@ __MO_DIV_1 := __EDTB22 ;
 __EDTB24 := __EDTB22 ;
 IF __EDTB24 THEN
 (* Operator output on : <> with __EDTB23 *)
-__EDTB23 := (ALL_STATUS <> 5) ;
+__EDTB23 := (ALL_STATUS <> 9) ;
 ELSE
 __EDTB23 := FALSE ;
 END_IF ;
@@ -154,7 +154,7 @@ __EDTB26 := __EDTB25 ;
 __EDTB28 := ALL_ENABLE ;
 IF __EDTB28 THEN
 (* Operator output on : = with __EDTB27 *)
-__EDTB27 := (ALL_STATUS = 5) ;
+__EDTB27 := (ALL_STATUS = 9) ;
 ELSE
 __EDTB27 := FALSE ;
 END_IF ;
