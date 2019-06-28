@@ -3,126 +3,135 @@
     <mapping variable="All_Enable" parent="Micro850" dataType="Bool" address="000021" va="0x448">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="Motor_Enable" parent="Micro850" dataType="Bool" address="000022">
+    <mapping variable="Motor_Enable" parent="Micro850" dataType="Bool" address="000022" va="0x449">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="Motor_RotateDirection" parent="Micro850" dataType="Bool" address="000023">
+    <mapping variable="Motor_RotateDirection" parent="Micro850" dataType="Bool" address="000023" va="0x44a">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
   </modbusRegister>
   <modbusRegister name="HOLDING_REGISTERS">
-    <mapping variable="All_Status" parent="Micro850" dataType="Int" address="400001">
+    <mapping variable="All_Status" parent="Micro850" dataType="Int" address="400001" va="0x45e">
       <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
     </mapping>
-    <mapping variable="All_Time" parent="Micro850" dataType="Real" address="400005">
+    <mapping variable="All_Time" parent="Micro850" dataType="Real" address="400005" va="0x49c">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Frequency_Set" parent="Micro850" dataType="Real" address="400009">
+    <mapping variable="Frequency_Set" parent="Micro850" dataType="Real" address="400009" va="0x46c">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Frequency_Feedback" parent="Micro850" dataType="Real" address="400013">
+    <mapping variable="Frequency_Feedback" parent="Micro850" dataType="Real" address="400013" va="0x470">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pulse_Real@Encoder" parent="Encoder" dataType="Real" address="400017">
+    <mapping variable="Pulse_Real@Encoder" parent="Encoder" dataType="Real" address="400017" va="0x534">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pulse_Abs@Encoder" parent="Encoder" dataType="Real" address="400021">
+    <mapping variable="Pulse_Abs@Encoder" parent="Encoder" dataType="Real" address="400021" va="0x538">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_Start" parent="Micro850" dataType="Real" address="400025">
+    <mapping variable="Pos_Start" parent="Micro850" dataType="Real" address="400025" va="0x4c0">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_End" parent="Micro850" dataType="Real" address="400029">
+    <mapping variable="Pos_End" parent="Micro850" dataType="Real" address="400029" va="0x4dc">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_Set" parent="Micro850" dataType="Real" address="400033">
+    <mapping variable="Pos_Set" parent="Micro850" dataType="Real" address="400033" va="0x474">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_Comp" parent="Micro850" dataType="Real" address="400037">
+    <mapping variable="Pos_Comp" parent="Micro850" dataType="Real" address="400037" va="0x478">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_Move" parent="Micro850" dataType="Real" address="400041">
+    <mapping variable="Pos_Move" parent="Micro850" dataType="Real" address="400041" va="0x47c">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_Feedback" parent="Micro850" dataType="Real" address="400045">
+    <mapping variable="Pos_Feedback" parent="Micro850" dataType="Real" address="400045" va="0x480">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_Kp@Pos" parent="Pos" dataType="Real" address="400049">
+    <mapping variable="Pos_Kp@Pos" parent="Pos" dataType="Real" address="400049" va="0x558">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_Ti@Pos" parent="Pos" dataType="Real" address="400053">
+    <mapping variable="Pos_Ti@Pos" parent="Pos" dataType="Real" address="400053" va="0x55c">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Pos_Td@Pos" parent="Pos" dataType="Real" address="400057">
+    <mapping variable="Pos_Td@Pos" parent="Pos" dataType="Real" address="400057" va="0x560">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Speed_Set" parent="Micro850" dataType="Real" address="400061">
+    <mapping variable="Speed_Set" parent="Micro850" dataType="Real" address="400061" va="0x490">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Speed_Feedback" parent="Micro850" dataType="Real" address="400065">
+    <mapping variable="Speed_Feedback" parent="Micro850" dataType="Real" address="400065" va="0x494">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Speed_Kp@Speed" parent="Speed" dataType="Real" address="400069">
+    <mapping variable="Speed_Kp@Speed" parent="Speed" dataType="Real" address="400069" va="0x57c">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Speed_Ti@Speed" parent="Speed" dataType="Real" address="400073">
+    <mapping variable="Speed_Ti@Speed" parent="Speed" dataType="Real" address="400073" va="0x580">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Speed_Td@Speed" parent="Speed" dataType="Real" address="400077">
+    <mapping variable="Speed_Td@Speed" parent="Speed" dataType="Real" address="400077" va="0x584">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Turnback_Pos1" parent="Micro850" dataType="Real" address="400081">
+    <mapping variable="Turnback_Pos1" parent="Micro850" dataType="Real" address="400081" va="0x4a0">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Turnback_Pos2" parent="Micro850" dataType="Real" address="400085">
+    <mapping variable="Turnback_Pos2" parent="Micro850" dataType="Real" address="400085" va="0x4a4">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Turnback_Pos3" parent="Micro850" dataType="Real" address="400089">
+    <mapping variable="Turnback_Pos3" parent="Micro850" dataType="Real" address="400089" va="0x4a8">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Turnback_Time1" parent="Micro850" dataType="Real" address="400093">
+    <mapping variable="Turnback_Time1" parent="Micro850" dataType="Real" address="400093" va="0x4ac">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Turnback_Time2" parent="Micro850" dataType="Real" address="400097">
+    <mapping variable="Turnback_Time2" parent="Micro850" dataType="Real" address="400097" va="0x4b0">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Turnback_Time3" parent="Micro850" dataType="Real" address="400101">
+    <mapping variable="Turnback_Time3" parent="Micro850" dataType="Real" address="400101" va="0x4b4">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Pos1" parent="Micro850" dataType="Real" address="400105">
+    <mapping variable="Hurdle_Pos1" parent="Micro850" dataType="Real" address="400105" va="0x4b8">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Pos2" parent="Micro850" dataType="Real" address="400109">
+    <mapping variable="Hurdle_Pos2" parent="Micro850" dataType="Real" address="400109" va="0x4c8">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Pos3" parent="Micro850" dataType="Real" address="400113">
+    <mapping variable="Hurdle_Pos3" parent="Micro850" dataType="Real" address="400113" va="0x4d0">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Pos4" parent="Micro850" dataType="Real" address="400117">
+    <mapping variable="Hurdle_Pos4" parent="Micro850" dataType="Real" address="400117" va="0x4e0">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Speed1" parent="Micro850" dataType="Real" address="400121">
+    <mapping variable="Hurdle_Speed1" parent="Micro850" dataType="Real" address="400121" va="0x4e8">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Speed2" parent="Micro850" dataType="Real" address="400125">
+    <mapping variable="Hurdle_Speed2" parent="Micro850" dataType="Real" address="400125" va="0x4fc">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Speed3" parent="Micro850" dataType="Real" address="400129">
+    <mapping variable="Hurdle_Speed3" parent="Micro850" dataType="Real" address="400129" va="0x500">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Speed4" parent="Micro850" dataType="Real" address="400133">
+    <mapping variable="Hurdle_Speed4" parent="Micro850" dataType="Real" address="400133" va="0x50c">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Pass_Speed1" parent="Micro850" dataType="Real" address="400137">
+    <mapping variable="Hurdle_Pass_Speed1" parent="Micro850" dataType="Real" address="400137" va="0x508">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Pass_Speed2" parent="Micro850" dataType="Real" address="400141">
+    <mapping variable="Hurdle_Pass_Speed2" parent="Micro850" dataType="Real" address="400141" va="0x510">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Hurdle_Pass_Speed3" parent="Micro850" dataType="Real" address="400145">
+    <mapping variable="Hurdle_Pass_Speed3" parent="Micro850" dataType="Real" address="400145" va="0x514">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
-    <mapping variable="Speed_2_Frequency_b" parent="Micro850" dataType="Real" address="400149">
+    <mapping variable="Speed_2_Frequency_b" parent="Micro850" dataType="Real" address="400149" va="0x4f4">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Turnback_Stop_Pos1" parent="Micro850" dataType="Real" address="400153">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Turnback_Stop_Pos2" parent="Micro850" dataType="Real" address="400157">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Turnback_Stop_Pos3" parent="Micro850" dataType="Real" address="400161">
       <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
     </mapping>
   </modbusRegister>

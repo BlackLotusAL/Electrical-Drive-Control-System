@@ -1,12 +1,5 @@
-Controller.<=.i1	
-Controller.<=.i2	
-Controller.<=.o1	
-Controller.>.i1	
-Controller.>.i2	
-Controller.>.o1	
-Controller.>=.i1	
-Controller.>=.i2	
-Controller.>=.o1	
+Controller.1 gain.i1	
+Controller.1 gain.o1	
 Controller.Micro850.Micro850.__SYSVA_ABORT_CYCLE	
 Controller.Micro850.Micro850.__SYSVA_CCEXEC	
 Controller.Micro850.Micro850.__SYSVA_CYCLECNT	
@@ -185,6 +178,12 @@ Controller.Micro850.Micro850.Init.TON_1.Pdate
 Controller.Micro850.Micro850.Init.TON_1.PT	
 Controller.Micro850.Micro850.Init.TON_1.Q	
 Controller.Micro850.Micro850.Init.TON_1.Redge	
+Controller.Micro850.Micro850.Init.TON_2.ET	
+Controller.Micro850.Micro850.Init.TON_2.IN	
+Controller.Micro850.Micro850.Init.TON_2.Pdate	
+Controller.Micro850.Micro850.Init.TON_2.PT	
+Controller.Micro850.Micro850.Init.TON_2.Q	
+Controller.Micro850.Micro850.Init.TON_2.Redge	
 Controller.Micro850.Micro850.Motor.AccelTime1	
 Controller.Micro850.Micro850.Motor.ClrFault	
 Controller.Micro850.Micro850.Motor.DecelTime1	
@@ -867,7 +866,7 @@ Controller.Micro850.Micro850.Pos.ATWarning
 Controller.Micro850.Micro850.Pos.Auto	
 Controller.Micro850.Micro850.Pos.AutoTune	
 Controller.Micro850.Micro850.Pos.Feedback	
-Controller.Micro850.Micro850.Pos.Frequency_Set_Temp	
+Controller.Micro850.Micro850.Pos.Frequency_P_b	
 Controller.Micro850.Micro850.Pos.Gains.DerivativeGain	
 Controller.Micro850.Micro850.Pos.Gains.DirectActing	
 Controller.Micro850.Micro850.Pos.Gains.ProportionalGain	
@@ -1102,8 +1101,10 @@ Controller.Micro850.Micro850.Pos_Error_Threshold
 Controller.Micro850.Micro850.Pos_Feedback	
 Controller.Micro850.Micro850.Pos_Move	
 Controller.Micro850.Micro850.Pos_PID_Enable	
+Controller.Micro850.Micro850.Pos_PID_Threshold	
 Controller.Micro850.Micro850.Pos_Set	
 Controller.Micro850.Micro850.Pos_Start	
+Controller.Micro850.Micro850.Pos_Stop_Threshold	
 Controller.Micro850.Micro850.Speed.AbsoluteError	
 Controller.Micro850.Micro850.Speed.ATParameters.ATDynaSet	
 Controller.Micro850.Micro850.Speed.ATParameters.ATReset	
@@ -1346,6 +1347,9 @@ Controller.Micro850.Micro850.Speed_2_Frequency_b
 Controller.Micro850.Micro850.Speed_2_Frequency_b1	
 Controller.Micro850.Micro850.Speed_2_Frequency_b2	
 Controller.Micro850.Micro850.Speed_2_Frequency_b3	
+Controller.Micro850.Micro850.Speed_2_Frequency_b4	
+Controller.Micro850.Micro850.Speed_2_Frequency_b5	
+Controller.Micro850.Micro850.Speed_2_Frequency_bPos	
 Controller.Micro850.Micro850.Speed_2_Frequency_k	
 Controller.Micro850.Micro850.Speed_Error	
 Controller.Micro850.Micro850.Speed_Feedback	
@@ -1383,6 +1387,9 @@ Controller.Micro850.Micro850.Turnback_Pos1
 Controller.Micro850.Micro850.Turnback_Pos2	
 Controller.Micro850.Micro850.Turnback_Pos3	
 Controller.Micro850.Micro850.Turnback_Status	
+Controller.Micro850.Micro850.Turnback_Stop_Pos1	
+Controller.Micro850.Micro850.Turnback_Stop_Pos2	
+Controller.Micro850.Micro850.Turnback_Stop_Pos3	
 Controller.Micro850.Micro850.Turnback_Time1	
 Controller.Micro850.Micro850.Turnback_Time2	
 Controller.Micro850.Micro850.Turnback_Time3	

@@ -110,39 +110,136 @@ IF __EDTB14 THEN
 FREQUENCY_SET_K := (OUTPUT * SPEED_2_FREQUENCY_K) ;
 END_IF ;
 __MO_MULT_1 := __EDTB14 ;
-__EDTB15 := __EDTB14 ;
-IF __EDTB15 THEN
-FREQUENCY_SET_K_B := (FREQUENCY_SET_K + SPEED_2_FREQUENCY_B) ;
+__EDTB16 := __EDTB14 ;
+IF __EDTB16 THEN
+(* Operator output on : < with __EDTB15 *)
+__EDTB15 := (SPEED_SET < 0.125) ;
+ELSE
+__EDTB15 := FALSE ;
 END_IF ;
-__MO_PLUS_1 := __EDTB15 ;
+__MO_LESS_1 := __EDTB15 ;
 __EDTB17 := __EDTB15 ;
 IF __EDTB17 THEN
-(* Operator output on : <= with __EDTB16 *)
-__EDTB16 := (FREQUENCY_SET_K_B <= 50.0) ;
-ELSE
-__EDTB16 := FALSE ;
+SPEED_2_FREQUENCY_B := (  SPEED_2_FREQUENCY_B1) ;
 END_IF ;
-__MO_LESSEQUAL_1 := __EDTB16 ;
-__EDTB18 := __EDTB16 ;
-IF __EDTB18 THEN
+__MO_1GAIN_7 := __EDTB17 ;
+__EDTB18 := __EDTB17 ;
+__EDTB20 := __EDTB14 ;
+IF __EDTB20 THEN
+(* Operator output on : >= with __EDTB19 *)
+__EDTB19 := (SPEED_SET >= 0.125) ;
+ELSE
+__EDTB19 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_1 := __EDTB19 ;
+__EDTB22 := __EDTB19 ;
+IF __EDTB22 THEN
+(* Operator output on : < with __EDTB21 *)
+__EDTB21 := (SPEED_SET < 0.175) ;
+ELSE
+__EDTB21 := FALSE ;
+END_IF ;
+__MO_LESS_2 := __EDTB21 ;
+__EDTB23 := __EDTB21 ;
+IF __EDTB23 THEN
+SPEED_2_FREQUENCY_B := (  SPEED_2_FREQUENCY_B2) ;
+END_IF ;
+__MO_1GAIN_8 := __EDTB23 ;
+__EDTB24 := __EDTB23 ;
+__EDTB26 := __EDTB14 ;
+IF __EDTB26 THEN
+(* Operator output on : >= with __EDTB25 *)
+__EDTB25 := (SPEED_SET >= 0.175) ;
+ELSE
+__EDTB25 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_2 := __EDTB25 ;
+__EDTB28 := __EDTB25 ;
+IF __EDTB28 THEN
+(* Operator output on : < with __EDTB27 *)
+__EDTB27 := (SPEED_SET < 0.225) ;
+ELSE
+__EDTB27 := FALSE ;
+END_IF ;
+__MO_LESS_3 := __EDTB27 ;
+__EDTB29 := __EDTB27 ;
+IF __EDTB29 THEN
+SPEED_2_FREQUENCY_B := (  SPEED_2_FREQUENCY_B3) ;
+END_IF ;
+__MO_1GAIN_9 := __EDTB29 ;
+__EDTB30 := __EDTB29 ;
+__EDTB32 := __EDTB14 ;
+IF __EDTB32 THEN
+(* Operator output on : >= with __EDTB31 *)
+__EDTB31 := (SPEED_SET >= 0.225) ;
+ELSE
+__EDTB31 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_3 := __EDTB31 ;
+__EDTB34 := __EDTB31 ;
+IF __EDTB34 THEN
+(* Operator output on : < with __EDTB33 *)
+__EDTB33 := (SPEED_SET < 0.34) ;
+ELSE
+__EDTB33 := FALSE ;
+END_IF ;
+__MO_LESS_4 := __EDTB33 ;
+__EDTB35 := __EDTB33 ;
+IF __EDTB35 THEN
+SPEED_2_FREQUENCY_B := (  SPEED_2_FREQUENCY_B4) ;
+END_IF ;
+__MO_1GAIN_10 := __EDTB35 ;
+__EDTB36 := __EDTB35 ;
+__EDTB38 := __EDTB14 ;
+IF __EDTB38 THEN
+(* Operator output on : > with __EDTB37 *)
+__EDTB37 := (SPEED_SET > 0.345) ;
+ELSE
+__EDTB37 := FALSE ;
+END_IF ;
+__MO_GREAT_1 := __EDTB37 ;
+__EDTB39 := __EDTB37 ;
+IF __EDTB39 THEN
+SPEED_2_FREQUENCY_B := (  SPEED_2_FREQUENCY_B5) ;
+END_IF ;
+__MO_1GAIN_11 := __EDTB39 ;
+__EDTB40 := __EDTB39 ;
+__EDTB41 := (__EDTB36 OR __EDTB40) ;
+__EDTB42 := (__EDTB30 OR __EDTB41) ;
+__EDTB43 := (__EDTB24 OR __EDTB42) ;
+__EDTB44 := (__EDTB18 OR __EDTB43) ;
+IF __EDTB44 THEN
+FREQUENCY_SET_K_B := (FREQUENCY_SET_K + SPEED_2_FREQUENCY_B) ;
+END_IF ;
+__MO_PLUS_1 := __EDTB44 ;
+__EDTB46 := __EDTB44 ;
+IF __EDTB46 THEN
+(* Operator output on : <= with __EDTB45 *)
+__EDTB45 := (FREQUENCY_SET_K_B <= 50.0) ;
+ELSE
+__EDTB45 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB45 ;
+__EDTB47 := __EDTB45 ;
+IF __EDTB47 THEN
 FREQUENCY_SET := (  FREQUENCY_SET_K_B) ;
 END_IF ;
-__MO_1GAIN_7 := __EDTB18 ;
-__EDTB19 := __EDTB18 ;
-__EDTB21 := __EDTB15 ;
-IF __EDTB21 THEN
-(* Operator output on : > with __EDTB20 *)
-__EDTB20 := (FREQUENCY_SET_K_B > 50.0) ;
+__MO_1GAIN_12 := __EDTB47 ;
+__EDTB48 := __EDTB47 ;
+__EDTB50 := __EDTB44 ;
+IF __EDTB50 THEN
+(* Operator output on : > with __EDTB49 *)
+__EDTB49 := (FREQUENCY_SET_K_B > 50.0) ;
 ELSE
-__EDTB20 := FALSE ;
+__EDTB49 := FALSE ;
 END_IF ;
-__MO_GREAT_1 := __EDTB20 ;
-__EDTB22 := __EDTB20 ;
-IF __EDTB22 THEN
+__MO_GREAT_2 := __EDTB49 ;
+__EDTB51 := __EDTB49 ;
+IF __EDTB51 THEN
 FREQUENCY_SET := (  40.0) ;
 END_IF ;
-__MO_1GAIN_8 := __EDTB22 ;
-__EDTB23 := __EDTB22 ;
+__MO_1GAIN_13 := __EDTB51 ;
+__EDTB52 := __EDTB51 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -176,4 +273,33 @@ __GL __LG0000 ;
 (* __EDTB21 *)
 (* __EDTB22 *)
 (* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
+(* __EDTB28 *)
+(* __EDTB29 *)
+(* __EDTB30 *)
+(* __EDTB31 *)
+(* __EDTB32 *)
+(* __EDTB33 *)
+(* __EDTB34 *)
+(* __EDTB35 *)
+(* __EDTB36 *)
+(* __EDTB37 *)
+(* __EDTB38 *)
+(* __EDTB39 *)
+(* __EDTB40 *)
+(* __EDTB41 *)
+(* __EDTB42 *)
+(* __EDTB43 *)
+(* __EDTB44 *)
+(* __EDTB45 *)
+(* __EDTB46 *)
+(* __EDTB47 *)
+(* __EDTB48 *)
+(* __EDTB49 *)
+(* __EDTB50 *)
+(* __EDTB51 *)
+(* __EDTB52 *)
 
