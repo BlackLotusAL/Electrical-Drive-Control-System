@@ -1,0 +1,227 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB1 := ALL_ENABLE ;
+IF __EDTB1 THEN
+SETPOINT := (  POS_SET) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB2 := ALL_ENABLE ;
+IF __EDTB2 THEN
+POS_FEEDBACK := (POS_MOVE + POS_COMP) ;
+END_IF ;
+__MO_PLUS_1 := __EDTB2 ;
+__EDTB3 := __EDTB2 ;
+IF __EDTB3 THEN
+PROCESS := (  POS_FEEDBACK) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB4 := ALL_ENABLE ;
+IF __EDTB4 THEN
+POS_ERROR := (POS_SET - POS_FEEDBACK) ;
+END_IF ;
+__MO_MINUS_1 := __EDTB4 ;
+__EDTB6 := __EDTB4 ;
+IF __EDTB6 THEN
+(* Operator output on : > with __EDTB5 *)
+__EDTB5 := (POS_ERROR > 0.0) ;
+ELSE
+__EDTB5 := FALSE ;
+END_IF ;
+__MO_GREAT_1 := __EDTB5 ;
+__EDTB7 := __EDTB5 ;
+IF __EDTB7 THEN
+MOTOR_ROTATEDIRECTION := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB7 ;
+__EDTB8 := __EDTB7 ;
+__EDTB10 := __EDTB4 ;
+IF __EDTB10 THEN
+(* Operator output on : < with __EDTB9 *)
+__EDTB9 := (POS_ERROR < 0.0) ;
+ELSE
+__EDTB9 := FALSE ;
+END_IF ;
+__MO_LESS_1 := __EDTB9 ;
+__EDTB11 := __EDTB9 ;
+IF __EDTB11 THEN
+MOTOR_ROTATEDIRECTION := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB11 ;
+__EDTB12 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB13 := ALL_ENABLE ;
+IF __EDTB13 THEN
+POS_ERROR_ABS := ABS(POS_ERROR) ;
+END_IF ;
+__MO_ABS_1 := __EDTB13 ;
+__EDTB15 := __EDTB13 ;
+IF __EDTB15 THEN
+(* Operator output on : >= with __EDTB14 *)
+__EDTB14 := (POS_ERROR_ABS >= 3.0) ;
+ELSE
+__EDTB14 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_1 := __EDTB14 ;
+__EDTB16 := __EDTB14 ;
+IF __EDTB16 THEN
+PID_ENABLE := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB16 ;
+__EDTB17 := __EDTB16 ;
+IF __EDTB17 THEN
+MOTOR_SETSPEED := (  40.0) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB17 ;
+__EDTB18 := __EDTB17 ;
+__EDTB20 := __EDTB13 ;
+IF __EDTB20 THEN
+(* Operator output on : < with __EDTB19 *)
+__EDTB19 := (POS_ERROR_ABS < 3.0) ;
+ELSE
+__EDTB19 := FALSE ;
+END_IF ;
+__MO_LESS_2 := __EDTB19 ;
+__EDTB21 := __EDTB19 ;
+IF __EDTB21 THEN
+PID_ENABLE := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_7 := __EDTB21 ;
+__EDTB22 := __EDTB21 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB24 := ALL_ENABLE AND PID_ENABLE ;
+IF __EDTB24 THEN
+(* Operator output on : <= with __EDTB23 *)
+__EDTB23 := (POS_ERROR_ABS <= POS_ERROR_THRESHOLD) ;
+ELSE
+__EDTB23 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB23 ;
+__EDTB25 := __EDTB23 ;
+IF __EDTB25 THEN
+MOTOR_ENABLE := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_8 := __EDTB25 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB26 := ALL_ENABLE ;
+IF __EDTB26 THEN
+GAINS.PROPORTIONALGAIN := (  PID_KP) ;
+END_IF ;
+__MO_1GAIN_9 := __EDTB26 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB27 := ALL_ENABLE ;
+IF __EDTB27 THEN
+GAINS.TIMEINTEGRAL := (  PID_KI) ;
+END_IF ;
+__MO_1GAIN_10 := __EDTB27 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB28 := ALL_ENABLE ;
+IF __EDTB28 THEN
+GAINS.TIMEDERIVATIVE := (  PID_KD) ;
+END_IF ;
+__MO_1GAIN_11 := __EDTB28 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB29 := ALL_ENABLE AND PID_ENABLE ;
+IF __EDTB29 THEN
+(* FB call: IPIDCONTROLLER *)
+IPIDCONTROLLER_1(PROCESS, SETPOINT, FEEDBACK, AUTO, INITIALIZE, GAINS, AUTO, ATPARAMETERS, 0) ;
+OUTPUT := IPIDCONTROLLER_1.Output ;
+ABSOLUTEERROR := IPIDCONTROLLER_1.AbsoluteError ;
+ATWARNING := IPIDCONTROLLER_1.ATWarning ;
+OUTGAINS := IPIDCONTROLLER_1.OutGains ;
+END_IF ;
+__MO_IPIDCONTROLLER_1 := __EDTB29 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
+(* __EDTB28 *)
+(* __EDTB29 *)
+

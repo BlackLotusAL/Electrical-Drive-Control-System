@@ -1,0 +1,146 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB1 := MOTOR_ENABLE ;
+IF __EDTB1 THEN
+START := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB1 ;
+__EDTB2 := __EDTB1 ;
+__EDTB3 := MOTOR_ENABLE ;
+IF __EDTB3 THEN
+STOP := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB3 ;
+__EDTB4 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB5 := NOT(MOTOR_ENABLE) ;
+IF __EDTB5 THEN
+STOP := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB5 ;
+__EDTB6 := __EDTB5 ;
+__EDTB7 := NOT(MOTOR_ENABLE) ;
+IF __EDTB7 THEN
+START := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB7 ;
+__EDTB8 := __EDTB7 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB9 := MOTOR_ROTATEDIRECTION ;
+IF __EDTB9 THEN
+SETFWD := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB9 ;
+__EDTB10 := __EDTB9 ;
+__EDTB11 := MOTOR_ROTATEDIRECTION ;
+IF __EDTB11 THEN
+SETREV := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB11 ;
+__EDTB12 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB13 := NOT(MOTOR_ROTATEDIRECTION) ;
+IF __EDTB13 THEN
+SETREV := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_7 := __EDTB13 ;
+__EDTB14 := __EDTB13 ;
+__EDTB15 := NOT(MOTOR_ROTATEDIRECTION) ;
+IF __EDTB15 THEN
+SETFWD := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_8 := __EDTB15 ;
+__EDTB16 := __EDTB15 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB17 := ALL_ENABLE ;
+IF __EDTB17 THEN
+SPEEDREF := (  MOTOR_SETSPEED) ;
+END_IF ;
+__MO_1GAIN_9 := __EDTB17 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB18 := ALL_ENABLE ;
+IF __EDTB18 THEN
+MOTOR_SPEEDFEEDBACK := (  SPEEDFEEDBACK) ;
+END_IF ;
+__MO_1GAIN_10 := __EDTB18 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+(* FB call: RA_PFx_ENET_STS_CMD *)
+RA_PFx_ENET_STS_CMD_1(ALL_ENABLE, IPADDRESS, UPDATERATE_MS, ENETCTRLTO_SEC, STOP, START, JOG, CLRFAULT, SETFWD, SETREV, SPEEDREF, ACCELTIME1, DECELTIME1) ;
+SPEEDFEEDBACK := RA_PFx_ENET_STS_CMD_1.SpeedFeedback ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+

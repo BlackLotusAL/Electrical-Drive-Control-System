@@ -1,0 +1,73 @@
+PROGRAM Motor
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*Motor_Enable*) (**)  
+ BST  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*True*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Start*) (**) )
+   NXB  FB  [2,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Stop*) (**) )
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,6] (**) (**)  XIO  [1,0] (*Motor_Enable*) (**)  
+ BST  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*True*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Stop*) (**) )
+   NXB  FB  [2,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Start*) (**) )
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,11] (**) (**)  XIC  [1,0] (*Motor_RotateDirection*) (**)  
+ BST  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*True*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SetFwd*) (**) )
+   NXB  FB  [2,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SetRev*) (**) )
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  XIO  [1,0] (*Motor_RotateDirection*) (**)  
+ BST  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*True*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SetRev*) (**) )
+   NXB  FB  [2,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*False*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SetFwd*) (**) )
+ BND
+
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,21] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*12*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Motor_SetSpeed*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SpeedRef*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,24] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*15*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SpeedFeedback*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Motor_SpeedFeedback*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,27] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*RA_PFx_ENET_STS_CMD*) (*RA_PFx_ENET_STS_CMD_1*) ( (*FBEN:*)(**) (**)  , (*IPAddress:*)(*IPAddress*) (**)  , (*UpdateRate_ms:*)(*UpdateRate_ms*) (**)  , (*EnetCtrlTO_sec:*)(*EnetCtrlTO_sec*) (**)  , (*Stop:*)(*Stop*) (**)  , (*Start:*)(*Start*) (**)  , (*Jog:*)(*Jog*) (**)  , (*ClrFault:*)(*ClrFault*) (**)  , (*SetFwd:*)(*SetFwd*) (**)  , (*SetRev:*)(*SetRev*) (**)  , (*SpeedRef:*)(*SpeedRef*) (**)  , (*AccelTime1:*)(*AccelTime1*) (**)  , (*DecelTime1:*)(*DecelTime1*) (**) ; (*FBENO:*)(**) (**)  , (*FBError:*)(**) (**)  , (*CommLoss:*)(**) (**)  , (*DriveType:*)(**) (**)  , (*DriveFault:*)(**) (**)  , (*FaultCode:*)(**) (**)  , (*Ready:*)(**) (**)  , (*Active:*)(**) (**)  , (*CmdFwd:*)(**) (**)  , (*CmdRev:*)(**) (**)  , (*AtRef:*)(**) (**)  , (*CmdSpeed:*)(**) (**)  , (*SpeedFeedback:*)(*SpeedFeedback*) (**)  , (*OutputCurrent:*)(**) (**)  , (*DCBusVoltage:*)(**) (**)  , (*OutputVoltage:*)(**) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,44] (**) (**)
+EOR [1,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=15
+#end_info
+END_PROGRAM

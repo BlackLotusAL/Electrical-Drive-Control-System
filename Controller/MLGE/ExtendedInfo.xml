@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ProjectElements>
-  <AcfElementGuid Guid="e66834f8-f230-4dd9-bc69-3b6bc4e8f704">
-    <File>RA_PFx_ENET_STS_CMD.AcfMlge</File>
-  </AcfElementGuid>
-  <AcfElementGuid Guid="fc16f4c1-7e4f-4cfc-a30f-8ff24b60ad51">
-    <File>Main_Program.AcfMlge</File>
-  </AcfElementGuid>
-</ProjectElements>

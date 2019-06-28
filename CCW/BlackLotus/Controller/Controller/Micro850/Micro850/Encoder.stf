@@ -1,0 +1,33 @@
+PROGRAM Encoder
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*HSC*) (*HSC_Data*) ( (*Enable:ENB*)(**) (**)  , (*HscCmd:HscC*)(*HscCmd*) (**)  , (*HscAppData:HscA*)(*HscAppData*) (**)  , (*HscStsInfo:HscS*)(*HscStsInfo*) (**)  , (*PlsData:PlsD*)(*PlsData*) (**)  , (*__ADI_PlsData:_ADI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Sts:Sts*)(*Sts*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,8] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*ANY_TO_REAL*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*HscAppData.Accumulator*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*PulseCount_Real*) (**) )  FB  [5,0] (*/*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*PulseCount_Real*) (**)  , (*i2:*)(*Pulse_2_Distance*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Pos_Move*) (**) )
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,12] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*ABS*) (*5*) ( (*EN:EN*)(**) (**)  , (*IN:IN*)(*PulseCount_Real*) (**) ; (*ENO:ENO*)(**) (**)  , (*ABS:Q*)(*PulseCount_Abs*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,15] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  XIC  [2,0] (*PulseCount_Reset*) (**)  FB  [3,0] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HscAppData.Accumulator*) (**) )
+EOR [6,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=5
+#end_info
+END_PROGRAM

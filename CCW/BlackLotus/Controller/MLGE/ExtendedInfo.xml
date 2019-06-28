@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectElements>
+  <AcfElementGuid Guid="07ef0496-8136-4a52-9a2b-4d4c0c0211a0">
+    <File>RA_PFx_ENET_STS_CMD.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="095839c6-7dcc-41e1-9bd3-320f212993af">
+    <File>Encoder.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="1d58c1ef-400c-426f-8296-4b72aa4ff071">
+    <File>Motor.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="755ec2b8-10d9-4d19-8eab-687bd7f67ba0">
+    <File>Timer.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="c5b0c5d8-1bf3-485c-af95-a5d9edb121a0">
+    <File>PID.AcfMlge</File>
+  </AcfElementGuid>
+</ProjectElements>

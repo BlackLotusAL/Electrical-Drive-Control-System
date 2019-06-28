@@ -1,0 +1,51 @@
+<modbusServer Version="2.0">
+  <modbusRegister name="COILS">
+    <mapping variable="All_Enable" parent="Micro850" dataType="Bool" address="000021" va="0x448">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="Motor_Enable" parent="Micro850" dataType="Bool" address="000022" va="0x449">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="Motor_RotateDirection" parent="Micro850" dataType="Bool" address="000023" va="0x44a">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="Timer_Reset@Timer" parent="Timer" dataType="Bool" address="000024" va="0x456">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="PulseCount_Reset@Encoder" parent="Encoder" dataType="Bool" address="000025" va="0x452">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+  </modbusRegister>
+  <modbusRegister name="HOLDING_REGISTERS">
+    <mapping variable="Motor_SpeedFeedback" parent="Micro850" dataType="Real" address="400001" va="0x468">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Pos_Move" parent="Micro850" dataType="Real" address="400005" va="0x46c">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Pos_Comp" parent="Micro850" dataType="Real" address="400009" va="0x470">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Timer_s@Timer" parent="Timer" dataType="Real" address="400013" va="0x4c4">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Pos_Feedback@PID" parent="PID" dataType="Real" address="400017" va="0x4a8">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Pos_Set@PID" parent="PID" dataType="Real" address="400025" va="0x4a4">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="PID_Kp@PID" parent="PID" dataType="Real" address="400029" va="0x4b4">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="PID_Ki@PID" parent="PID" dataType="Real" address="400033" va="0x4b8">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="PID_Kd@PID" parent="PID" dataType="Real" address="400037" va="0x4bc">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="PulseCount_Real@Encoder" parent="Encoder" dataType="Real" address="400021" va="0x488">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+  </modbusRegister>
+</modbusServer>
