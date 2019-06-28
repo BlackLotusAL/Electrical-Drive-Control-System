@@ -13,226 +13,349 @@ ELSE
 __EDTB1 := FALSE ;
 END_IF ;
 __MO_EQUAL_1 := __EDTB1 ;
-__EDTB4 := __EDTB1 ;
-IF __EDTB4 THEN
-(* Operator output on : = with __EDTB3 *)
-__EDTB3 := (HURDLE_STATUS = 1) ;
-ELSE
-__EDTB3 := FALSE ;
+__EDTB3 := __EDTB1 ;
+IF __EDTB3 THEN
+POS_FEEDBACK := (POS_MOVE + POS_INIT) ;
 END_IF ;
-__MO_EQUAL_2 := __EDTB3 ;
+__MO_PLUS_1 := __EDTB3 ;
 __EDTB5 := __EDTB3 ;
 IF __EDTB5 THEN
+(* Operator output on : = with __EDTB4 *)
+__EDTB4 := (HURDLE_STATUS = 1) ;
+ELSE
+__EDTB4 := FALSE ;
+END_IF ;
+__MO_EQUAL_2 := __EDTB4 ;
+__EDTB6 := __EDTB4 ;
+IF __EDTB6 THEN
 POS_SET := (  HURDLE_POS1) ;
 END_IF ;
-__MO_1GAIN_1 := __EDTB5 ;
-__EDTB6 := __EDTB5 ;
-IF __EDTB6 THEN
-POS_ERROR := (POS_SET - POS_FEEDBACK) ;
-END_IF ;
-__MO_MINUS_1 := __EDTB6 ;
+__MO_1GAIN_1 := __EDTB6 ;
 __EDTB7 := __EDTB6 ;
 IF __EDTB7 THEN
+POS_ERROR := (POS_SET - POS_FEEDBACK) ;
+END_IF ;
+__MO_MINUS_1 := __EDTB7 ;
+__EDTB8 := __EDTB7 ;
+IF __EDTB8 THEN
 POS_ERROR_ABS := ABS(POS_ERROR) ;
 END_IF ;
-__MO_ABS_1 := __EDTB7 ;
-__EDTB9 := __EDTB7 ;
-IF __EDTB9 THEN
-(* Operator output on : <= with __EDTB8 *)
-__EDTB8 := (POS_ERROR_ABS <= HURDLE_THRESHOLD) ;
-ELSE
-__EDTB8 := FALSE ;
-END_IF ;
-__MO_LESSEQUAL_1 := __EDTB8 ;
+__MO_ABS_1 := __EDTB8 ;
 __EDTB10 := __EDTB8 ;
 IF __EDTB10 THEN
-FREQUENCY_SET := (  HURDLE_SPEED1) ;
+(* Operator output on : < with __EDTB9 *)
+__EDTB9 := (POS_FEEDBACK < HURDLE_POS1) ;
+ELSE
+__EDTB9 := FALSE ;
 END_IF ;
-__MO_1GAIN_2 := __EDTB10 ;
-__EDTB11 := __EDTB10 ;
+__MO_LESS_1 := __EDTB9 ;
+__EDTB11 := __EDTB9 ;
 IF __EDTB11 THEN
-HURDLE_STATUS := (  2) ;
+SPEED_SET := (  HURDLE_SPEED4) ;
 END_IF ;
-__MO_1GAIN_3 := __EDTB11 ;
+__MO_1GAIN_2 := __EDTB11 ;
 __EDTB12 := __EDTB11 ;
-__EDTB14 := __EDTB1 ;
+__EDTB14 := __EDTB8 ;
 IF __EDTB14 THEN
-(* Operator output on : = with __EDTB13 *)
-__EDTB13 := (HURDLE_STATUS = 2) ;
+(* Operator output on : <= with __EDTB13 *)
+__EDTB13 := (POS_ERROR_ABS <= HURDLE_THRESHOLD) ;
 ELSE
 __EDTB13 := FALSE ;
 END_IF ;
-__MO_EQUAL_3 := __EDTB13 ;
+__MO_LESSEQUAL_1 := __EDTB13 ;
 __EDTB15 := __EDTB13 ;
 IF __EDTB15 THEN
-POS_SET := (  HURDLE_POS2) ;
+SPEED_SET := (  HURDLE_SPEED1) ;
 END_IF ;
-__MO_1GAIN_4 := __EDTB15 ;
+__MO_1GAIN_3 := __EDTB15 ;
 __EDTB16 := __EDTB15 ;
 IF __EDTB16 THEN
-POS_ERROR := (POS_SET - POS_FEEDBACK) ;
+SPEED_2_FREQUENCY_B := (  SPEED_2_FREQUENCY_B1) ;
 END_IF ;
-__MO_MINUS_2 := __EDTB16 ;
+__MO_1GAIN_4 := __EDTB16 ;
 __EDTB17 := __EDTB16 ;
-IF __EDTB17 THEN
-POS_ERROR_ABS := ABS(POS_ERROR) ;
-END_IF ;
-__MO_ABS_2 := __EDTB17 ;
-__EDTB19 := __EDTB17 ;
+__EDTB19 := __EDTB8 ;
 IF __EDTB19 THEN
-(* Operator output on : > with __EDTB18 *)
-__EDTB18 := (POS_FEEDBACK > HURDLE_POS1) ;
+(* Operator output on : <= with __EDTB18 *)
+__EDTB18 := (POS_ERROR_ABS <= HURDLE_PASS_THRESHOLD) ;
 ELSE
 __EDTB18 := FALSE ;
 END_IF ;
-__MO_GREAT_1 := __EDTB18 ;
+__MO_LESSEQUAL_2 := __EDTB18 ;
 __EDTB20 := __EDTB18 ;
 IF __EDTB20 THEN
-FREQUENCY_SET := (  HURDLE_SPEED4) ;
+HURDLE_PASS_SPEED1 := (  SPEED_FEEDBACK_ABS) ;
 END_IF ;
 __MO_1GAIN_5 := __EDTB20 ;
 __EDTB21 := __EDTB20 ;
-__EDTB23 := __EDTB17 ;
-IF __EDTB23 THEN
-(* Operator output on : <= with __EDTB22 *)
-__EDTB22 := (POS_ERROR_ABS <= HURDLE_THRESHOLD) ;
+IF __EDTB21 THEN
+HURDLE_STATUS := (  2) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB21 ;
+__EDTB22 := __EDTB21 ;
+__EDTB23 := (__EDTB17 OR __EDTB22) ;
+__EDTB24 := (__EDTB12 OR __EDTB23) ;
+__EDTB26 := __EDTB3 ;
+IF __EDTB26 THEN
+(* Operator output on : = with __EDTB25 *)
+__EDTB25 := (HURDLE_STATUS = 2) ;
 ELSE
-__EDTB22 := FALSE ;
+__EDTB25 := FALSE ;
 END_IF ;
-__MO_LESSEQUAL_2 := __EDTB22 ;
-__EDTB24 := __EDTB22 ;
-IF __EDTB24 THEN
-FREQUENCY_SET := (  HURDLE_SPEED2) ;
+__MO_EQUAL_3 := __EDTB25 ;
+__EDTB27 := __EDTB25 ;
+IF __EDTB27 THEN
+POS_SET := (  HURDLE_POS2) ;
 END_IF ;
-__MO_1GAIN_6 := __EDTB24 ;
-__EDTB25 := __EDTB24 ;
-IF __EDTB25 THEN
+__MO_1GAIN_7 := __EDTB27 ;
+__EDTB28 := __EDTB27 ;
+IF __EDTB28 THEN
+POS_ERROR := (POS_SET - POS_FEEDBACK) ;
+END_IF ;
+__MO_MINUS_2 := __EDTB28 ;
+__EDTB29 := __EDTB28 ;
+IF __EDTB29 THEN
+POS_ERROR_ABS := ABS(POS_ERROR) ;
+END_IF ;
+__MO_ABS_2 := __EDTB29 ;
+__EDTB31 := __EDTB29 ;
+IF __EDTB31 THEN
+(* Operator output on : < with __EDTB30 *)
+__EDTB30 := (POS_FEEDBACK < HURDLE_POS2) ;
+ELSE
+__EDTB30 := FALSE ;
+END_IF ;
+__MO_LESS_2 := __EDTB30 ;
+__EDTB32 := __EDTB30 ;
+IF __EDTB32 THEN
+SPEED_SET := (  HURDLE_SPEED4) ;
+END_IF ;
+__MO_1GAIN_8 := __EDTB32 ;
+__EDTB33 := __EDTB32 ;
+__EDTB35 := __EDTB29 ;
+IF __EDTB35 THEN
+(* Operator output on : <= with __EDTB34 *)
+__EDTB34 := (POS_ERROR_ABS <= HURDLE_THRESHOLD) ;
+ELSE
+__EDTB34 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_3 := __EDTB34 ;
+__EDTB36 := __EDTB34 ;
+IF __EDTB36 THEN
+SPEED_SET := (  HURDLE_SPEED2) ;
+END_IF ;
+__MO_1GAIN_9 := __EDTB36 ;
+__EDTB37 := __EDTB36 ;
+IF __EDTB37 THEN
+SPEED_2_FREQUENCY_B := (  SPEED_2_FREQUENCY_B2) ;
+END_IF ;
+__MO_1GAIN_10 := __EDTB37 ;
+__EDTB38 := __EDTB37 ;
+__EDTB40 := __EDTB29 ;
+IF __EDTB40 THEN
+(* Operator output on : <= with __EDTB39 *)
+__EDTB39 := (POS_ERROR_ABS <= HURDLE_PASS_THRESHOLD) ;
+ELSE
+__EDTB39 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_4 := __EDTB39 ;
+__EDTB41 := __EDTB39 ;
+IF __EDTB41 THEN
+HURDLE_PASS_SPEED2 := (  SPEED_FEEDBACK_ABS) ;
+END_IF ;
+__MO_1GAIN_11 := __EDTB41 ;
+__EDTB42 := __EDTB41 ;
+IF __EDTB42 THEN
 HURDLE_STATUS := (  3) ;
 END_IF ;
-__MO_1GAIN_7 := __EDTB25 ;
-__EDTB26 := __EDTB25 ;
-__EDTB27 := (__EDTB21 OR __EDTB26) ;
-__EDTB29 := __EDTB1 ;
-IF __EDTB29 THEN
-(* Operator output on : = with __EDTB28 *)
-__EDTB28 := (HURDLE_STATUS = 3) ;
+__MO_1GAIN_12 := __EDTB42 ;
+__EDTB43 := __EDTB42 ;
+__EDTB44 := (__EDTB38 OR __EDTB43) ;
+__EDTB45 := (__EDTB33 OR __EDTB44) ;
+__EDTB47 := __EDTB3 ;
+IF __EDTB47 THEN
+(* Operator output on : = with __EDTB46 *)
+__EDTB46 := (HURDLE_STATUS = 3) ;
 ELSE
-__EDTB28 := FALSE ;
+__EDTB46 := FALSE ;
 END_IF ;
-__MO_EQUAL_4 := __EDTB28 ;
-__EDTB30 := __EDTB28 ;
-IF __EDTB30 THEN
+__MO_EQUAL_4 := __EDTB46 ;
+__EDTB48 := __EDTB46 ;
+IF __EDTB48 THEN
 POS_SET := (  HURDLE_POS3) ;
 END_IF ;
-__MO_1GAIN_8 := __EDTB30 ;
-__EDTB31 := __EDTB30 ;
-IF __EDTB31 THEN
+__MO_1GAIN_13 := __EDTB48 ;
+__EDTB49 := __EDTB48 ;
+IF __EDTB49 THEN
 POS_ERROR := (POS_SET - POS_FEEDBACK) ;
 END_IF ;
-__MO_MINUS_3 := __EDTB31 ;
-__EDTB32 := __EDTB31 ;
-IF __EDTB32 THEN
+__MO_MINUS_3 := __EDTB49 ;
+__EDTB50 := __EDTB49 ;
+IF __EDTB50 THEN
 POS_ERROR_ABS := ABS(POS_ERROR) ;
 END_IF ;
-__MO_ABS_3 := __EDTB32 ;
-__EDTB34 := __EDTB32 ;
-IF __EDTB34 THEN
-(* Operator output on : > with __EDTB33 *)
-__EDTB33 := (POS_FEEDBACK > HURDLE_POS2) ;
+__MO_ABS_3 := __EDTB50 ;
+__EDTB52 := __EDTB50 ;
+IF __EDTB52 THEN
+(* Operator output on : < with __EDTB51 *)
+__EDTB51 := (POS_FEEDBACK < HURDLE_POS3) ;
 ELSE
-__EDTB33 := FALSE ;
+__EDTB51 := FALSE ;
 END_IF ;
-__MO_GREAT_2 := __EDTB33 ;
-__EDTB35 := __EDTB33 ;
-IF __EDTB35 THEN
-FREQUENCY_SET := (  HURDLE_SPEED4) ;
+__MO_LESS_3 := __EDTB51 ;
+__EDTB53 := __EDTB51 ;
+IF __EDTB53 THEN
+SPEED_SET := (  HURDLE_SPEED4) ;
 END_IF ;
-__MO_1GAIN_9 := __EDTB35 ;
-__EDTB36 := __EDTB35 ;
-__EDTB38 := __EDTB32 ;
-IF __EDTB38 THEN
-(* Operator output on : <= with __EDTB37 *)
-__EDTB37 := (POS_ERROR_ABS <= HURDLE_THRESHOLD) ;
+__MO_1GAIN_14 := __EDTB53 ;
+__EDTB54 := __EDTB53 ;
+__EDTB56 := __EDTB50 ;
+IF __EDTB56 THEN
+(* Operator output on : <= with __EDTB55 *)
+__EDTB55 := (POS_ERROR_ABS <= HURDLE_THRESHOLD) ;
 ELSE
-__EDTB37 := FALSE ;
+__EDTB55 := FALSE ;
 END_IF ;
-__MO_LESSEQUAL_3 := __EDTB37 ;
-__EDTB39 := __EDTB37 ;
-IF __EDTB39 THEN
-FREQUENCY_SET := (  HURDLE_SPEED3) ;
+__MO_LESSEQUAL_5 := __EDTB55 ;
+__EDTB57 := __EDTB55 ;
+IF __EDTB57 THEN
+SPEED_SET := (  HURDLE_SPEED3) ;
 END_IF ;
-__MO_1GAIN_10 := __EDTB39 ;
-__EDTB40 := __EDTB39 ;
-IF __EDTB40 THEN
+__MO_1GAIN_15 := __EDTB57 ;
+__EDTB58 := __EDTB57 ;
+IF __EDTB58 THEN
+SPEED_2_FREQUENCY_B := (  SPEED_2_FREQUENCY_B3) ;
+END_IF ;
+__MO_1GAIN_16 := __EDTB58 ;
+__EDTB59 := __EDTB58 ;
+__EDTB61 := __EDTB50 ;
+IF __EDTB61 THEN
+(* Operator output on : <= with __EDTB60 *)
+__EDTB60 := (POS_ERROR_ABS <= HURDLE_PASS_THRESHOLD) ;
+ELSE
+__EDTB60 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_6 := __EDTB60 ;
+__EDTB62 := __EDTB60 ;
+IF __EDTB62 THEN
+HURDLE_PASS_SPEED3 := (  SPEED_FEEDBACK_ABS) ;
+END_IF ;
+__MO_1GAIN_17 := __EDTB62 ;
+__EDTB63 := __EDTB62 ;
+IF __EDTB63 THEN
 HURDLE_STATUS := (  4) ;
 END_IF ;
-__MO_1GAIN_11 := __EDTB40 ;
-__EDTB41 := __EDTB40 ;
-__EDTB42 := (__EDTB36 OR __EDTB41) ;
-__EDTB44 := __EDTB1 ;
-IF __EDTB44 THEN
-(* Operator output on : = with __EDTB43 *)
-__EDTB43 := (HURDLE_STATUS = 4) ;
+__MO_1GAIN_18 := __EDTB63 ;
+__EDTB64 := __EDTB63 ;
+__EDTB65 := (__EDTB59 OR __EDTB64) ;
+__EDTB66 := (__EDTB54 OR __EDTB65) ;
+__EDTB68 := __EDTB3 ;
+IF __EDTB68 THEN
+(* Operator output on : = with __EDTB67 *)
+__EDTB67 := (HURDLE_STATUS = 4) ;
 ELSE
-__EDTB43 := FALSE ;
+__EDTB67 := FALSE ;
 END_IF ;
-__MO_EQUAL_5 := __EDTB43 ;
-__EDTB45 := __EDTB43 ;
-IF __EDTB45 THEN
+__MO_EQUAL_5 := __EDTB67 ;
+__EDTB69 := __EDTB67 ;
+IF __EDTB69 THEN
 POS_SET := (  HURDLE_POS4) ;
 END_IF ;
-__MO_1GAIN_12 := __EDTB45 ;
-__EDTB46 := __EDTB45 ;
-IF __EDTB46 THEN
+__MO_1GAIN_19 := __EDTB69 ;
+__EDTB70 := __EDTB69 ;
+IF __EDTB70 THEN
 POS_ERROR := (POS_SET - POS_FEEDBACK) ;
 END_IF ;
-__MO_MINUS_4 := __EDTB46 ;
-__EDTB47 := __EDTB46 ;
-IF __EDTB47 THEN
+__MO_MINUS_4 := __EDTB70 ;
+__EDTB71 := __EDTB70 ;
+IF __EDTB71 THEN
 POS_ERROR_ABS := ABS(POS_ERROR) ;
 END_IF ;
-__MO_ABS_4 := __EDTB47 ;
-__EDTB49 := __EDTB47 ;
-IF __EDTB49 THEN
-(* Operator output on : > with __EDTB48 *)
-__EDTB48 := (POS_FEEDBACK > HURDLE_POS3) ;
+__MO_ABS_4 := __EDTB71 ;
+__EDTB73 := __EDTB71 ;
+IF __EDTB73 THEN
+(* Operator output on : < with __EDTB72 *)
+__EDTB72 := (POS_FEEDBACK < HURDLE_POS4) ;
 ELSE
-__EDTB48 := FALSE ;
+__EDTB72 := FALSE ;
 END_IF ;
-__MO_GREAT_3 := __EDTB48 ;
-__EDTB50 := __EDTB48 ;
-IF __EDTB50 THEN
-FREQUENCY_SET := (  HURDLE_SPEED4) ;
+__MO_LESS_4 := __EDTB72 ;
+__EDTB74 := __EDTB72 ;
+IF __EDTB74 THEN
+SPEED_SET := (  HURDLE_SPEED4) ;
 END_IF ;
-__MO_1GAIN_13 := __EDTB50 ;
-__EDTB51 := __EDTB50 ;
-__EDTB53 := __EDTB47 ;
-IF __EDTB53 THEN
-(* Operator output on : <= with __EDTB52 *)
-__EDTB52 := (POS_ERROR_ABS <= POS_ERROR_THRESHOLD) ;
+__MO_1GAIN_20 := __EDTB74 ;
+__EDTB75 := __EDTB74 ;
+__EDTB77 := __EDTB71 ;
+IF __EDTB77 THEN
+(* Operator output on : <= with __EDTB76 *)
+__EDTB76 := (POS_ERROR_ABS <= POS_ERROR_THRESHOLD) ;
 ELSE
-__EDTB52 := FALSE ;
+__EDTB76 := FALSE ;
 END_IF ;
-__MO_LESSEQUAL_4 := __EDTB52 ;
-__EDTB54 := __EDTB52 ;
-IF __EDTB54 THEN
+__MO_LESSEQUAL_7 := __EDTB76 ;
+__EDTB78 := __EDTB76 ;
+IF __EDTB78 THEN
 HURDLE_STATUS := (  1) ;
 END_IF ;
-__MO_1GAIN_14 := __EDTB54 ;
-__EDTB55 := __EDTB54 ;
-IF __EDTB55 THEN
+__MO_1GAIN_21 := __EDTB78 ;
+__EDTB79 := __EDTB78 ;
+IF __EDTB79 THEN
 POS_SET := (  HURDLE_POS1) ;
 END_IF ;
-__MO_1GAIN_15 := __EDTB55 ;
-__EDTB56 := __EDTB55 ;
-IF __EDTB56 THEN
+__MO_1GAIN_22 := __EDTB79 ;
+__EDTB80 := __EDTB79 ;
+IF __EDTB80 THEN
 MOTOR_ENABLE := (  FALSE) ;
 END_IF ;
-__MO_1GAIN_16 := __EDTB56 ;
-__EDTB57 := __EDTB56 ;
-__EDTB58 := (__EDTB51 OR __EDTB57) ;
-__EDTB59 := (__EDTB42 OR __EDTB58) ;
-__EDTB60 := (__EDTB27 OR __EDTB59) ;
+__MO_1GAIN_23 := __EDTB80 ;
+__EDTB81 := __EDTB80 ;
+__EDTB82 := (__EDTB75 OR __EDTB81) ;
+__EDTB83 := (__EDTB66 OR __EDTB82) ;
+__EDTB84 := (__EDTB45 OR __EDTB83) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB86 := ALL_ENABLE ;
+IF __EDTB86 THEN
+(* Operator output on : = with __EDTB85 *)
+__EDTB85 := (ALL_STATUS = 3) ;
+ELSE
+__EDTB85 := FALSE ;
+END_IF ;
+__MO_EQUAL_6 := __EDTB85 ;
+__EDTB88 := __EDTB85 ;
+IF __EDTB88 THEN
+(* Operator output on : > with __EDTB87 *)
+__EDTB87 := (POS_ERROR > 0.0) ;
+ELSE
+__EDTB87 := FALSE ;
+END_IF ;
+__MO_GREAT_1 := __EDTB87 ;
+__EDTB89 := __EDTB87 ;
+IF __EDTB89 THEN
+MOTOR_ROTATEDIRECTION := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_24 := __EDTB89 ;
+__EDTB90 := __EDTB89 ;
+__EDTB92 := __EDTB85 ;
+IF __EDTB92 THEN
+(* Operator output on : < with __EDTB91 *)
+__EDTB91 := (POS_ERROR < 0.0) ;
+ELSE
+__EDTB91 := FALSE ;
+END_IF ;
+__MO_LESS_5 := __EDTB91 ;
+__EDTB93 := __EDTB91 ;
+IF __EDTB93 THEN
+MOTOR_ROTATEDIRECTION := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_25 := __EDTB93 ;
+__EDTB94 := __EDTB93 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -303,4 +426,38 @@ __GL __LG0000 ;
 (* __EDTB58 *)
 (* __EDTB59 *)
 (* __EDTB60 *)
+(* __EDTB61 *)
+(* __EDTB62 *)
+(* __EDTB63 *)
+(* __EDTB64 *)
+(* __EDTB65 *)
+(* __EDTB66 *)
+(* __EDTB67 *)
+(* __EDTB68 *)
+(* __EDTB69 *)
+(* __EDTB70 *)
+(* __EDTB71 *)
+(* __EDTB72 *)
+(* __EDTB73 *)
+(* __EDTB74 *)
+(* __EDTB75 *)
+(* __EDTB76 *)
+(* __EDTB77 *)
+(* __EDTB78 *)
+(* __EDTB79 *)
+(* __EDTB80 *)
+(* __EDTB81 *)
+(* __EDTB82 *)
+(* __EDTB83 *)
+(* __EDTB84 *)
+(* __EDTB85 *)
+(* __EDTB86 *)
+(* __EDTB87 *)
+(* __EDTB88 *)
+(* __EDTB89 *)
+(* __EDTB90 *)
+(* __EDTB91 *)
+(* __EDTB92 *)
+(* __EDTB93 *)
+(* __EDTB94 *)
 

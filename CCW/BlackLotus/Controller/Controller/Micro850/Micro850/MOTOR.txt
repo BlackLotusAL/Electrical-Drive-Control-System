@@ -137,18 +137,34 @@ IF __EDTB22 THEN
 TIMER0_S := (TIMER0_REAL / 1000.0) ;
 END_IF ;
 __MO_DIV_1 := __EDTB22 ;
-__EDTB23 := __EDTB22 ;
-IF __EDTB23 THEN
+__EDTB24 := __EDTB22 ;
+IF __EDTB24 THEN
+(* Operator output on : <> with __EDTB23 *)
+__EDTB23 := (ALL_STATUS <> 5) ;
+ELSE
+__EDTB23 := FALSE ;
+END_IF ;
+__MO_DIFF_1 := __EDTB23 ;
+__EDTB25 := __EDTB23 ;
+IF __EDTB25 THEN
 ALL_TIME := (  TIMER0_S) ;
 END_IF ;
-__MO_1GAIN_11 := __EDTB23 ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-(*Label :*)(**)
+__MO_1GAIN_11 := __EDTB25 ;
+__EDTB26 := __EDTB25 ;
+__EDTB28 := ALL_ENABLE ;
+IF __EDTB28 THEN
+(* Operator output on : = with __EDTB27 *)
+__EDTB27 := (ALL_STATUS = 5) ;
+ELSE
+__EDTB27 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB27 ;
+__EDTB29 := __EDTB27 ;
+IF __EDTB29 THEN
+ALL_TIME := (  0.0) ;
+END_IF ;
+__MO_1GAIN_12 := __EDTB29 ;
+__EDTB30 := __EDTB29 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -182,4 +198,11 @@ __GL __LG0000 ;
 (* __EDTB21 *)
 (* __EDTB22 *)
 (* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
+(* __EDTB28 *)
+(* __EDTB29 *)
+(* __EDTB30 *)
 

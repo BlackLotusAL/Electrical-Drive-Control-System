@@ -5,47 +5,49 @@ BOF
 
 (**)
 
-SOR  [0,1] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Set*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SetPoint*) (**) )
+SOR  [0,1] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Feedback_Abs*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Process*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,4] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Pos_Move*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*XIN*) (**) )
+SOR  [0,4] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Set*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SetPoint*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,7] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*DERIVATE*) (*DERIVATE_1*) ( (*RUN:RUN*)(**) (**)  , (*XIN:XIN*)(*XIN*) (**)  , (*CYCLE:CYCL*)(*CYCLE*) (**) ; (*ENO:ENO*)(**) (**)  , (*XOUT:XOUT*)(*Speed_Temp*) (**) )  FB  [5,0] (***) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Temp*) (**)  , (*i2:*)(*1000.0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Speed_Feedback*) (**) )  FB  [8,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Feedback*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Process*) (**) )
-EOR [11,0]
-
-
-(**)
-
-SOR  [0,11] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*18*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Kp*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Gains.ProportionalGain*) (**) )
+SOR  [0,7] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Feedback_Abs*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Feedback*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,14] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*18*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Ti*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Gains.TimeIntegral*) (**) )
+SOR  [0,10] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*18*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Kp*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Gains.ProportionalGain*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,17] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Td*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Gains.TimeDerivative*) (**) )
+SOR  [0,13] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*1 gain*) (*18*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Speed_Ti*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Gains.TimeIntegral*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,20] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*IPIDCONTROLLER*) (*IPIDCONTROLLER_1*) ( (*EN:EN*)(**) (**)  , (*Process:P*)(*Process*) (**)  , (*SetPoint:SP*)(*SetPoint*) (**)  , (*FeedBack:FB*)(*Feedback*) (**)  , (*Auto:AUTO*)(*Auto*) (**)  , (*Initialize:INIT*)(*Initialize*) (**)  , (*Gains:GNS*)(*Gains*) (**)  , (*AutoTune:ATUN*)(*AutoTune*) (**)  , (*ATParameters:ATPA*)(*ATParameters*) (**)  , (*ErrorMode:ERR*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Output:OUT*)(*Output*) (**)  , (*AbsoluteError:AERR*)(*AbsoluteError*) (**)  , (*ATWarning:ATW*)(*ATWarning*) (**)  , (*OutGains:OGNS*)(*OutGains*) (**) )  FB  [5,0] (*=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  FB  [8,0] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Output*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
-EOR [11,0]
+SOR  [0,16] (**) (**)  XIC  [1,0] (*All_Enable*) (**)  FB  [2,0] (*IPIDCONTROLLER*) (*IPIDCONTROLLER_1*) ( (*EN:EN*)(**) (**)  , (*Process:P*)(*Process*) (**)  , (*SetPoint:SP*)(*SetPoint*) (**)  , (*FeedBack:FB*)(*Feedback*) (**)  , (*Auto:AUTO*)(*Auto*) (**)  , (*Initialize:INIT*)(*Initialize*) (**)  , (*Gains:GNS*)(*Gains*) (**)  , (*AutoTune:ATUN*)(*AutoTune*) (**)  , (*ATParameters:ATPA*)(*ATParameters*) (**)  , (*ErrorMode:ERR*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Output:OUT*)(*Output*) (**)  , (*AbsoluteError:AERR*)(*AbsoluteError*) (**)  , (*ATWarning:ATW*)(*ATWarning*) (**)  , (*OutGains:OGNS*)(*OutGains*) (**) )  
+ BST  FB  [5,0] (*=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  XIC  [8,0] (*Speed_PID_Enable*) (**)
+   NXB  FB  [5,3] (*=*) (*38*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*All_Status*) (**)  , (*i2:*)(*3*) (**) ; (*o1:*)(**) (**) )
+ BND
+  FB  [9,0] (***) (*26*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Output*) (**)  , (*i2:*)(*Speed_2_Frequency_k*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set_Temp*) (**) )  FB  [12,0] (*+*) (*37*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_Temp*) (**)  , (*i2:*)(*Speed_2_Frequency_b*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set_Temp1*) (**) )  
+ BST  FB  [15,0] (*<=*) (*17*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_Temp1*) (**)  , (*i2:*)(*40.0*) (**) ; (*o1:*)(**) (**) )  FB  [18,0] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_Temp1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
+   NXB  FB  [15,3] (*>*) (*20*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Frequency_Set_Temp1*) (**)  , (*i2:*)(*40.0*) (**) ; (*o1:*)(**) (**) )  FB  [18,3] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*40.0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Frequency_Set*) (**) )
+ BND
+
+EOR [21,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=10
+NextId=44
 #end_info
 END_PROGRAM

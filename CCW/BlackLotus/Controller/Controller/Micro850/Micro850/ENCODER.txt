@@ -26,6 +26,11 @@ IF __EDTB2 THEN
 POS_MOVE := (PULSE_REAL / PULSE_2_DISTANCE) ;
 END_IF ;
 __MO_DIV_1 := __EDTB2 ;
+__EDTB3 := __EDTB2 ;
+IF __EDTB3 THEN
+PULSE_ABS := ABS(PULSE_REAL) ;
+END_IF ;
+__MO_ABS_1 := __EDTB3 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -33,11 +38,32 @@ __MO_DIV_1 := __EDTB2 ;
 (*************** Rung **********************************)
 (**)
 (*Label :*)(**)
-__EDTB3 := ALL_ENABLE ;
-IF __EDTB3 THEN
-PULSE_ABS := ABS(PULSE_REAL) ;
+__EDTB4 := ALL_ENABLE ;
+IF __EDTB4 THEN
+XIN := (  POS_MOVE) ;
 END_IF ;
-__MO_ABS_1 := __EDTB3 ;
+__MO_1GAIN_1 := __EDTB4 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+(* FB call: DERIVATE *)
+DERIVATE_1(ALL_ENABLE, XIN, CYCLE) ;
+SPEED_TEMP := DERIVATE_1.XOUT ;
+__MO_DERIVATE_1 := ALL_ENABLE ;
+__EDTB5 := ALL_ENABLE ;
+IF __EDTB5 THEN
+SPEED_FEEDBACK := (SPEED_TEMP * 1000.0) ;
+END_IF ;
+__MO_MULT_1 := __EDTB5 ;
+__EDTB6 := __EDTB5 ;
+IF __EDTB6 THEN
+SPEED_FEEDBACK_ABS := ABS(SPEED_FEEDBACK) ;
+END_IF ;
+__MO_ABS_2 := __EDTB6 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -51,4 +77,7 @@ __GL __LG0000 ;
 (* __EDTB1 *)
 (* __EDTB2 *)
 (* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
 

@@ -1,0 +1,198 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB2 := ALL_ENABLE ;
+IF __EDTB2 THEN
+(* Operator output on : = with __EDTB1 *)
+__EDTB1 := (ALL_STATUS = 1) ;
+ELSE
+__EDTB1 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB1 ;
+__EDTB3 := __EDTB1 ;
+IF __EDTB3 THEN
+POS_FEEDBACK := (POS_MOVE + POS_INIT) ;
+END_IF ;
+__MO_PLUS_1 := __EDTB3 ;
+__EDTB4 := __EDTB3 ;
+IF __EDTB4 THEN
+POS_ERROR := (POS_SET - POS_FEEDBACK) ;
+END_IF ;
+__MO_MINUS_1 := __EDTB4 ;
+__EDTB5 := __EDTB4 ;
+IF __EDTB5 THEN
+POS_ERROR_ABS := ABS(POS_ERROR) ;
+END_IF ;
+__MO_ABS_1 := __EDTB5 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB7 := ALL_ENABLE ;
+IF __EDTB7 THEN
+(* Operator output on : = with __EDTB6 *)
+__EDTB6 := (ALL_STATUS = 1) ;
+ELSE
+__EDTB6 := FALSE ;
+END_IF ;
+__MO_EQUAL_2 := __EDTB6 ;
+__EDTB9 := __EDTB6 ;
+IF __EDTB9 THEN
+(* Operator output on : > with __EDTB8 *)
+__EDTB8 := (POS_ERROR > 0.0) ;
+ELSE
+__EDTB8 := FALSE ;
+END_IF ;
+__MO_GREAT_1 := __EDTB8 ;
+__EDTB10 := __EDTB8 ;
+IF __EDTB10 THEN
+MOTOR_ROTATEDIRECTION := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB10 ;
+__EDTB11 := __EDTB10 ;
+__EDTB13 := __EDTB6 ;
+IF __EDTB13 THEN
+(* Operator output on : < with __EDTB12 *)
+__EDTB12 := (POS_ERROR < 0.0) ;
+ELSE
+__EDTB12 := FALSE ;
+END_IF ;
+__MO_LESS_1 := __EDTB12 ;
+__EDTB14 := __EDTB12 ;
+IF __EDTB14 THEN
+MOTOR_ROTATEDIRECTION := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB14 ;
+__EDTB15 := __EDTB14 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB17 := ALL_ENABLE ;
+IF __EDTB17 THEN
+(* Operator output on : = with __EDTB16 *)
+__EDTB16 := (ALL_STATUS = 1) ;
+ELSE
+__EDTB16 := FALSE ;
+END_IF ;
+__MO_EQUAL_3 := __EDTB16 ;
+__EDTB19 := __EDTB16 ;
+IF __EDTB19 THEN
+(* Operator output on : >= with __EDTB18 *)
+__EDTB18 := (POS_ERROR_ABS >= 3.0) ;
+ELSE
+__EDTB18 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_1 := __EDTB18 ;
+__EDTB20 := __EDTB18 ;
+IF __EDTB20 THEN
+POS_PID_ENABLE := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB20 ;
+__EDTB21 := __EDTB20 ;
+IF __EDTB21 THEN
+FREQUENCY_SET := (  40.0) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB21 ;
+__EDTB22 := __EDTB21 ;
+__EDTB24 := __EDTB16 ;
+IF __EDTB24 THEN
+(* Operator output on : < with __EDTB23 *)
+__EDTB23 := (POS_ERROR_ABS < 3.0) ;
+ELSE
+__EDTB23 := FALSE ;
+END_IF ;
+__MO_LESS_2 := __EDTB23 ;
+__EDTB25 := __EDTB23 ;
+IF __EDTB25 THEN
+POS_PID_ENABLE := (  TRUE) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB25 ;
+__EDTB26 := __EDTB25 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+__EDTB28 := ALL_ENABLE ;
+IF __EDTB28 THEN
+(* Operator output on : = with __EDTB27 *)
+__EDTB27 := (ALL_STATUS = 1) ;
+ELSE
+__EDTB27 := FALSE ;
+END_IF ;
+__MO_EQUAL_4 := __EDTB27 ;
+__EDTB30 := __EDTB27 AND POS_PID_ENABLE ;
+IF __EDTB30 THEN
+(* Operator output on : <= with __EDTB29 *)
+__EDTB29 := (POS_ERROR_ABS <= POS_ERROR_THRESHOLD) ;
+ELSE
+__EDTB29 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB29 ;
+__EDTB31 := __EDTB29 ;
+IF __EDTB31 THEN
+MOTOR_ENABLE := (  FALSE) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB31 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+(*Label :*)(**)
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
+(* __EDTB28 *)
+(* __EDTB29 *)
+(* __EDTB30 *)
+(* __EDTB31 *)
+

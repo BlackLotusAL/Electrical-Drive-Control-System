@@ -15,10 +15,19 @@
   <AcfElementGuid Guid="38e817b5-5982-40c3-96b3-285d3dad2e76">
     <File>Hurdle.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="8eae5e89-dba0-4b82-84c1-edcca1fe291c">
+    <File>Init.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="a4d87612-a715-4dae-8615-4e93f6254eb1">
     <File>Turnback.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="c5b0c5d8-1bf3-485c-af95-a5d9edb121a0">
     <File>Pos.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="d879fea6-df1a-4892-9632-df982fbd270c">
+    <File>HMeter.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="dea5a657-5209-4798-96f5-869ab0935958">
+    <File>Dev.AcfMlge</File>
   </AcfElementGuid>
 </ProjectElements>
