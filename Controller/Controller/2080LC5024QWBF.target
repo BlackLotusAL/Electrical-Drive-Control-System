@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Target Name="2080LC5024QWBF" CodeType="" Model="0" ByteOrder="1" AlignNumber="4" MaxBlockSize="0" UINT16Size="2" UINT32Size="4" UCHARSize="1" PointerSize="4" FirstVa="1024" Quantum="1" EolChar="13,10" OKReal="true" OKString="true" SM="8192" T1="0" T2="0" T3="0" T4="0" T5="0" G1="0" G2="0" G3="0" G4="0" UserData="true" SingleTextLine="" Help="" Keyword="" SysVarCycleDate="264" SysVarCycycTime="268" SysVarCyCurrent="272" SysVarCyMaximum="276" SysVarCyOverFlow="280" SysVarScanCnt="284" SysVarCycleCnt="288" SysVarResMode="292" SysVarCCExec="293" SysVarKVBPerr="294" SysVarKVBCErr="295" SysVarWNGNum="296" SysVarWNGarg="300" SysVarResName="4" StrictAlignt="false" MaxParam="128" SysVarWNGCMD="315" SysVarWNGCMPTNM="304" IsIsagraf3="false" Features="ResNbr=1" IsEnhancedTarget="true" MaxPouSize="65535">
+  <TargetDescription></TargetDescription>
+  <CodeTypes>
+    <CodeType Code="TicCode" />
+  </CodeTypes>
+  <Networks>
+    <Network Name="ISARSI" />
+    <Network Name="CIPNetwork" />
+  </Networks>
+  <CustomFields>
+    <CustomField Name="VendorID" Value="1" />
+    <CustomField Name="DeviceType" Value="14" />
+    <CustomField Name="ProductCode" Value="141" />
+    <CustomField Name="CatalogID" Value="2080-LC50-24QWB" />
+    <CustomField Name="Series" Value="0" />
+    <CustomField Name="FWOSVersion" Value="6.11" />
+    <CustomField Name="MaxUsrMem" Value="143360" />
+    <CustomField Name="MaxUserDataMem" Value="81920" />
+    <CustomField Name="MaxFFMem" Value="20480" />
+    <CustomField Name="MaxRtMem" Value="81920" />
+    <CustomField Name="MaxVariableNameLength" Value="40" />
+    <CustomField Name="MaxEmbeddedFileSize" Value="133120" />
+    <CustomField Name="MaxDigitalIOConfigurable" Value="132" />
+  </CustomFields>
+  <ExtendedParameters />
+  <Features>
+    <Feature Name="PASSWORD" IsSupported="true" />
+    <Feature Name="OPTCODE" IsSupported="true" />
+    <Feature Name="BINDING" IsSupported="false" />
+    <Feature Name="MULTIRESOURCES" IsSupported="false" />
+    <Feature Name="ONLINE" IsSupported="true" />
+    <Feature Name="RETAIN" IsSupported="false" />
+    <Feature Name="MICROCYCTIME" IsSupported="false" />
+    <Feature Name="INTRPT" IsSupported="true" />
+    <Feature Name="ARINPRF" IsSupported="true" />
+    <Feature Name="BIGPOUS" IsSupported="false" />
+    <Feature Name="NETWORKINST" IsSupported="false" />
+    <Feature Name="SFCPRIO" IsSupported="false" />
+    <Feature Name="COMPLEXSUBVARCONNECTEDTOIOCHAN" IsSupported="false" />
+    <Feature Name="IOCHANOEMPARAM" IsSupported="false" />
+    <Feature Name="OLCCFBINITEXIT" IsSupported="false" />
+    <Feature Name="ANYBITACCESSOFFSET" IsSupported="false" />
+    <Feature Name="POUNUMBERINGPERSISTENCE" IsSupported="false" />
+    <Feature Name="INDIRECTBITADDRESSING" IsSupported="false" />
+  </Features>
+  <Languages>
+    <Language Name="ST" IsSupported="true" />
+    <Language Name="IL" IsSupported="false" />
+    <Language Name="LD" IsSupported="true" />
+    <Language Name="FBD" IsSupported="true" />
+    <Language Name="SAMA" IsSupported="false" />
+    <Language Name="61499" IsSupported="false" />
+    <Language Name="SFC" IsSupported="false" />
+    <Language Name="FC" IsSupported="false" />
+    <Language Name="C" IsSupported="true" />
+  </Languages>
+  <DataTypes>
+    <DataType Name="BOOL" IsSupported="true" />
+    <DataType Name="SINT" IsSupported="true" />
+    <DataType Name="DINT" IsSupported="true" />
+    <DataType Name="REAL" IsSupported="true" />
+    <DataType Name="TIME" IsSupported="true" />
+    <DataType Name="STRING" IsSupported="true" />
+    <DataType Name="LREAL" IsSupported="true" />
+    <DataType Name="INT" IsSupported="true" />
+    <DataType Name="LINT" IsSupported="true" />
+    <DataType Name="USINT" IsSupported="true" />
+    <DataType Name="UINT" IsSupported="true" />
+    <DataType Name="UDINT" IsSupported="true" />
+    <DataType Name="ULINT" IsSupported="true" />
+    <DataType Name="DATE" IsSupported="true" />
+    <DataType Name="BYTE" IsSupported="true" />
+    <DataType Name="WORD" IsSupported="true" />
+    <DataType Name="DWORD" IsSupported="true" />
+    <DataType Name="LWORD" IsSupported="true" />
+    <DataType Name="SAFEBOOL" IsSupported="false" />
+    <DataType Name="ANY_ELEMENTARY" IsSupported="true" />
+    <DataType Name="__ANY" IsSupported="false" />
+  </DataTypes>
+  <SystemVariables>
+    <Variable Name="SYSVA_REMOTE" DataType="BOOL" InitialValue="FALSE" ReadOnly="true" SingleTextLine="远程状态" StringSize="0" VA="384" />
+    <Variable Name="SYSVA_SUSPEND_ID" DataType="UINT" InitialValue="0" ReadOnly="true" SingleTextLine="上次挂起 ID" StringSize="0" VA="386" />
+    <Variable Name="SYSVA_TCYWDG" DataType="UDINT" InitialValue="2000" ReadOnly="false" SingleTextLine="软件看门狗" StringSize="0" VA="388" />
+    <Variable Name="SYSVA_MAJ_ERR_HALT" DataType="BOOL" InitialValue="FALSE" ReadOnly="true" SingleTextLine="因出现严重错误已暂停状态" StringSize="0" VA="392" />
+    <Variable Name="SYSVA_ABORT_CYCLE" DataType="BOOL" InitialValue="FALSE" ReadOnly="true" SingleTextLine="中止循环" StringSize="0" VA="385" />
+    <Variable Name="SYSVA_FIRST_SCAN" DataType="BOOL" InitialValue="TRUE" ReadOnly="true" SingleTextLine="首次扫描位" StringSize="0" VA="393" />
+    <Variable Name="SYSVA_USER_DATA_LOST" DataType="BOOL" InitialValue="FALSE" ReadOnly="false" SingleTextLine="用户数据丢失" StringSize="0" VA="394" />
+    <Variable Name="SYSVA_POWERUP_BIT" DataType="BOOL" InitialValue="TRUE" ReadOnly="true" SingleTextLine="通电位" StringSize="0" VA="395" />
+  </SystemVariables>
+  <Interrupts>
+    <Interrupt Name="UFR" Number="0" DataType="BOOL" SingleTextLine="User Fault Routine" StringSize="0" />
+    <Interrupt Name="EII0" Number="1" DataType="IRQEII" SingleTextLine="Event interrupt #0" StringSize="0" />
+    <Interrupt Name="EII1" Number="2" DataType="IRQEII" SingleTextLine="Event interrupt #1" StringSize="0" />
+    <Interrupt Name="EII2" Number="3" DataType="IRQEII" SingleTextLine="Event interrupt #2" StringSize="0" />
+    <Interrupt Name="EII3" Number="4" DataType="IRQEII" SingleTextLine="Event interrupt #3" StringSize="0" />
+    <Interrupt Name="EII4" Number="11" DataType="IRQEII" SingleTextLine="Event interrupt #4" StringSize="0" />
+    <Interrupt Name="EII5" Number="12" DataType="IRQEII" SingleTextLine="Event interrupt #5" StringSize="0" />
+    <Interrupt Name="STI0" Number="15" DataType="IRQSTI" SingleTextLine="Selected Timed Interrupt #0" StringSize="0" />
+    <Interrupt Name="STI1" Number="16" DataType="IRQSTI" SingleTextLine="Selected Timed Interrupt #1" StringSize="0" />
+    <Interrupt Name="STI2" Number="17" DataType="IRQSTI" SingleTextLine="Selected Timed Interrupt #2" StringSize="0" />
+    <Interrupt Name="STI3" Number="18" DataType="IRQSTI" SingleTextLine="Selected Timed Interrupt #3" StringSize="0" />
+    <Interrupt Name="UPMUI0" Number="19" DataType="IRQUPM" SingleTextLine="Universal Port Interrupt #0" StringSize="0" />
+    <Interrupt Name="UPMUI1" Number="20" DataType="IRQUPM" SingleTextLine="Universal Port Interrupt #1" StringSize="0" />
+    <Interrupt Name="HSC0" Number="5" DataType="IRQHSC" SingleTextLine="High speed counter #0" StringSize="0" />
+    <Interrupt Name="HSC1" Number="6" DataType="IRQHSC" SingleTextLine="High speed counter #1" StringSize="0" />
+    <Interrupt Name="HSC2" Number="7" DataType="IRQHSC" SingleTextLine="High speed counter #2" StringSize="0" />
+    <Interrupt Name="HSC3" Number="8" DataType="IRQHSC" SingleTextLine="High speed counter #3" StringSize="0" />
+    <Interrupt Name="EII6" Number="13" DataType="IRQEII" SingleTextLine="Event interrupt #6" StringSize="0" />
+    <Interrupt Name="EII7" Number="14" DataType="IRQEII" SingleTextLine="Event interrupt #7" StringSize="0" />
+    <Interrupt Name="UPMUI2" Number="21" DataType="IRQUPM" SingleTextLine="Universal Port Interrupt #2" StringSize="0" />
+  </Interrupts>
+  <StdPous>
+    <StdPou Name="SR" IsSupported="true" />
+    <StdPou Name="RS" IsSupported="true" />
+    <StdPou Name="R_TRIG" IsSupported="true" />
+    <StdPou Name="F_TRIG" IsSupported="true" />
+    <StdPou Name="CTU" IsSupported="true" />
+    <StdPou Name="CTD" IsSupported="true" />
+    <StdPou Name="CTUD" IsSupported="true" />
+    <StdPou Name="TON" IsSupported="true" />
+    <StdPou Name="TOF" IsSupported="true" />
+    <StdPou Name="CMP" IsSupported="false" />
+    <StdPou Name="STACKINT" IsSupported="true" />
+    <StdPou Name="AVERAGE" IsSupported="true" />
+    <StdPou Name="HYSTER" IsSupported="true" />
+    <StdPou Name="LIM_ALRM" IsSupported="true" />
+    <StdPou Name="INTEGRAL" IsSupported="true" />
+    <StdPou Name="DERIVATE" IsSupported="true" />
+    <StdPou Name="BLINK" IsSupported="false" />
+    <StdPou Name="SIG_GEN" IsSupported="false" />
+    <StdPou Name="ABS" IsSupported="true" />
+    <StdPou Name="EXPT" IsSupported="true" />
+    <StdPou Name="LOG" IsSupported="true" />
+    <StdPou Name="POW" IsSupported="true" />
+    <StdPou Name="SQRT" IsSupported="true" />
+    <StdPou Name="TRUNC" IsSupported="true" />
+    <StdPou Name="ACOS" IsSupported="true" />
+    <StdPou Name="ASIN" IsSupported="true" />
+    <StdPou Name="ATAN" IsSupported="true" />
+    <StdPou Name="COS" IsSupported="true" />
+    <StdPou Name="SIN" IsSupported="true" />
+    <StdPou Name="TAN" IsSupported="true" />
+    <StdPou Name="ROL" IsSupported="true" />
+    <StdPou Name="ROR" IsSupported="true" />
+    <StdPou Name="SHL" IsSupported="true" />
+    <StdPou Name="SHR" IsSupported="true" />
+    <StdPou Name="MIN" IsSupported="true" />
+    <StdPou Name="MAX" IsSupported="true" />
+    <StdPou Name="LIMIT" IsSupported="true" />
+    <StdPou Name="MOD" IsSupported="true" />
+    <StdPou Name="MUX4" IsSupported="false" />
+    <StdPou Name="MUX8" IsSupported="false" />
+    <StdPou Name="ODD" IsSupported="false" />
+    <StdPou Name="RAND" IsSupported="true" />
+    <StdPou Name="SEL" IsSupported="false" />
+    <StdPou Name="ASCII" IsSupported="true" />
+    <StdPou Name="CHAR" IsSupported="true" />
+    <StdPou Name="DELETE" IsSupported="true" />
+    <StdPou Name="FIND" IsSupported="true" />
+    <StdPou Name="INSERT" IsSupported="true" />
+    <StdPou Name="LEFT" IsSupported="true" />
+    <StdPou Name="MID" IsSupported="true" />
+    <StdPou Name="MLEN" IsSupported="true" />
+    <StdPou Name="REPLACE" IsSupported="true" />
+    <StdPou Name="RIGHT" IsSupported="true" />
+    <StdPou Name="AND_MASK" IsSupported="true" />
+    <StdPou Name="OR_MASK" IsSupported="true" />
+    <StdPou Name="XOR_MASK" IsSupported="true" />
+    <StdPou Name="NOT_MASK" IsSupported="true" />
+    <StdPou Name="TP" IsSupported="true" />
+    <StdPou Name="CONNECT" IsSupported="false" />
+    <StdPou Name="USEND_S" IsSupported="false" />
+    <StdPou Name="URCV_S" IsSupported="false" />
+    <StdPou Name="SUB_DATE_DATE" IsSupported="false" />
+    <StdPou Name="CURRENT_ISA_DATE" IsSupported="false" />
+    <StdPou Name="SEMA" IsSupported="false" />
+    <StdPou Name="LOCK_CPU" IsSupported="false" />
+    <StdPou Name="UNLOCK_CPU" IsSupported="false" />
+  </StdPous>
+  <Pous>
+    <Pou FileVersion="200.00.003" Name="TDF" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="计算时间差。" Language="C" CustomFbd="0" Localization="LibC" GroupName="时间" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="TDF" ConvDirection="NoConversion" DataType="TIME" />
+      <LocalVars>
+        <Variable Name="TDF" DataType="TIME" InitialValue="" Comment="TRUE:已执行函数" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="TimeA" DataType="TIME" InitialValue="" Comment="时间差计算操作的开始时间。" Address="" Modifier="Constant" Kind="VarInput" Alias="T_A" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TimeB" DataType="TIME" InitialValue="" Comment="时间差计算操作的结束时间。" Address="" Modifier="Constant" Kind="VarInput" Alias="T_B" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="RPC" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="读取用户程序校验和。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="RPC" ConvDirection="NoConversion" DataType="UDINT" />
+      <LocalVars>
+        <Variable Name="RPC" DataType="UDINT" InitialValue="" Comment="指定用户程序的校验和" Address="" Modifier="Constant" Kind="VarOutput" Alias="CRC" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="MemMod" DataType="BOOL" InitialValue="" Comment="如果为 TRUE，则值检索自内存模块" Address="" Modifier="Constant" Kind="VarInput" Alias="MM" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="TAN_LREAL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="执行 64 位实型正切计算。" Language="C" CustomFbd="0" Localization="LibC" GroupName="算术" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="TAN_LREAL" ConvDirection="NoConversion" DataType="LREAL" />
+      <LocalVars>
+        <Variable Name="TAN_LREAL" DataType="LREAL" InitialValue="" Comment="实型值的正切结果" Address="" Modifier="Constant" Kind="VarOutput" Alias="RET" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="IN" DataType="LREAL" InitialValue="" Comment="正切的输入参数。对于无效输入，= 1E+38。" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="SIN_LREAL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="执行 64 位实型正弦计算。" Language="C" CustomFbd="0" Localization="LibC" GroupName="算术" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="SIN_LREAL" ConvDirection="NoConversion" DataType="LREAL" />
+      <LocalVars>
+        <Variable Name="SIN_LREAL" DataType="LREAL" InitialValue="" Comment="实型值的正弦结果" Address="" Modifier="Constant" Kind="VarOutput" Alias="RET" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="IN" DataType="LREAL" InitialValue="" Comment="正弦的输入参数。(位于集合 [-1.0 .. +1.0] 内)。" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="ATAN_LREAL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="执行 64 位实型反正切计算。" Language="C" CustomFbd="0" Localization="LibC" GroupName="算术" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="ATAN_LREAL" ConvDirection="NoConversion" DataType="LREAL" />
+      <LocalVars>
+        <Variable Name="ATAN_LREAL" DataType="LREAL" InitialValue="" Comment="实型值的反正切结果" Address="" Modifier="Constant" Kind="VarOutput" Alias="RET" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="IN" DataType="LREAL" InitialValue="" Comment="反正切的输入参数。 (位于集合 [-PI/2 ..+PI/2] 内)，对于无效输入，为 0.0。" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="ASIN_LREAL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="执行 64 位实型反正弦计算。" Language="C" CustomFbd="0" Localization="LibC" GroupName="算术" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="ASIN_LREAL" ConvDirection="NoConversion" DataType="LREAL" />
+      <LocalVars>
+        <Variable Name="ASIN_LREAL" DataType="LREAL" InitialValue="" Comment="实型值的反正弦结果" Address="" Modifier="Constant" Kind="VarOutput" Alias="RET" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="IN" DataType="LREAL" InitialValue="" Comment="反正弦的输入参数。必须位于集合 [-1.0 .. +1.0] 内。" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="MUX8B" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="多路复用器（8 条目）- 接受 BOOL 输入和输出值。" Language="C" CustomFbd="0" Localization="LibC" GroupName="布尔" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="MUX8B" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="MUX8B" DataType="BOOL" InitialValue="" Comment="选择 8 个布尔输入所得到的结果" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Selector" DataType="USINT" InitialValue="" Comment="选择器整数值，必须位于集合 [0...7] 内。" Address="" Modifier="Constant" Kind="VarInput" Alias="Sel" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN0" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN0" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN1" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN1" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN2" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN2" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN3" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN3" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN4" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN4" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN5" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN5" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN6" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN6" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN7" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN7" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="TND" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="中止当前用户程序扫描。" Language="C" CustomFbd="0" Localization="LibC" GroupName="程序控制" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="TND" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="TND" DataType="BOOL" InitialValue="" Comment="TRUE:已执行函数" Address="" Modifier="Constant" Kind="VarOutput" Alias="ENO" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="TOW" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="当实时时钟值在周范围内时打开输出。" Language="C" CustomFbd="0" Localization="LibC" GroupName="时间" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="TOW" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="TOW" DataType="BOOL" InitialValue="" Comment="TRUE: RTC 的值在四个通道中的任何一个的“周时间”设置范围内" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="TimeA" DataType="TOWDATA" InitialValue="" Comment="通道 A 的周时间设置" Address="" Modifier="Constant" Kind="VarInput" Alias="TA" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TimeB" DataType="TOWDATA" InitialValue="" Comment="通道 B 的周时间设置" Address="" Modifier="Constant" Kind="VarInput" Alias="TB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TimeC" DataType="TOWDATA" InitialValue="" Comment="通道 C 的周时间设置" Address="" Modifier="Constant" Kind="VarInput" Alias="TC" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TimeD" DataType="TOWDATA" InitialValue="" Comment="通道 D 的周时间设置" Address="" Modifier="Constant" Kind="VarInput" Alias="TD" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="MUX4B" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="多路复用器（4 条目）- 接受 BOOL 输入和输出值。" Language="C" CustomFbd="0" Localization="LibC" GroupName="布尔" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="MUX4B" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="MUX4B" DataType="BOOL" InitialValue="" Comment="选择 4 个布尔输入所得到的结果" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Selector" DataType="USINT" InitialValue="" Comment="选择器整数值，必须位于集合 [0...3] 内。" Address="" Modifier="Constant" Kind="VarInput" Alias="Sel" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN0" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN0" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN1" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN1" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN2" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN2" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN3" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN3" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="RHC" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="读取高速时钟。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="RHC" ConvDirection="NoConversion" DataType="UDINT" />
+      <LocalVars>
+        <Variable Name="RHC" DataType="UDINT" InitialValue="" Comment="TRUE:已执行函数" Address="" Modifier="Constant" Kind="VarOutput" Alias="CLK" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="DOY" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="当实时时钟值在年范围内时打开输出。" Language="C" CustomFbd="0" Localization="LibC" GroupName="时间" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="DOY" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="DOY" DataType="BOOL" InitialValue="" Comment="TRUE:RTC 的值在四个通道中的任何一个的“年时间”设置范围内" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="TimeA" DataType="DOYDATA" InitialValue="" Comment="通道 A 的年时间设置" Address="" Modifier="Constant" Kind="VarInput" Alias="TA" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TimeB" DataType="DOYDATA" InitialValue="" Comment="通道 B 的年时间设置" Address="" Modifier="Constant" Kind="VarInput" Alias="TB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TimeC" DataType="DOYDATA" InitialValue="" Comment="通道 C 的年时间设置" Address="" Modifier="Constant" Kind="VarInput" Alias="TC" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TimeD" DataType="DOYDATA" InitialValue="" Comment="通道 D 的年时间设置" Address="" Modifier="Constant" Kind="VarInput" Alias="TD" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="STIS" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="从控制程序启动 STI 计时器（而不是自动启动）。" Language="C" CustomFbd="0" Localization="LibC" GroupName="中断" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="STIS" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="STIS" DataType="BOOL" InitialValue="" Comment="TRUE:已执行函数" Address="" Modifier="Constant" Kind="VarOutput" Alias="ENO" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IRQType" DataType="UDINT" InitialValue="" Comment="要启用的不同 IRQ 类型的连接。将 IRQ_STI* 定义的字用于此指令。" Address="" Modifier="Constant" Kind="VarInput" Alias="IRQ" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="SetPoint" DataType="UINT" InitialValue="" Comment="必须在执行可选择计时用户中断之前过期的时间长度 (单位为毫秒)。值为零时会禁用 STI 函数。" Address="" Modifier="Constant" Kind="VarInput" Alias="SetP" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="TTABLE" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="根据输入组合提供值输出。" Language="C" CustomFbd="0" Localization="LibC" GroupName="布尔" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="TTABLE" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="TTABLE" DataType="BOOL" InitialValue="" Comment="对应于输入组合的输出的值" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Table" DataType="UINT" InitialValue="" Comment="Boolean 函数的真值表。" Address="" Modifier="Constant" Kind="VarInput" Alias="Tbl" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN0" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN0" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN1" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN1" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN2" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN2" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IN3" DataType="BOOL" InitialValue="" Comment="任何 BOOL 输入值" Address="" Modifier="Constant" Kind="VarInput" Alias="IN3" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="UID" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="禁用特定用户中断。" Language="C" CustomFbd="0" Localization="LibC" GroupName="中断" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="UID" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="UID" DataType="BOOL" InitialValue="" Comment="Rung 状态(与 Enable 相同)" Address="" Modifier="Constant" Kind="VarOutput" Alias="ENO" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IRQType" DataType="UDINT" InitialValue="" Comment="要禁用的不同 IRQ 类型的连接。将 IRQ_* 定义的字用于此指令。" Address="" Modifier="Constant" Kind="VarInput" Alias="IRQ" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="UIE" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="启用特定用户中断。" Language="C" CustomFbd="0" Localization="LibC" GroupName="中断" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="UIE" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="UIE" DataType="BOOL" InitialValue="" Comment="Rung 状态(与 Enable 相同)" Address="" Modifier="Constant" Kind="VarOutput" Alias="ENO" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IRQType" DataType="UDINT" InitialValue="" Comment="要启用的不同 IRQ 类型的连接。将 IRQ_* 定义的字用于此指令。" Address="" Modifier="Constant" Kind="VarInput" Alias="IRQ" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="UIC" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="清除特定用户中断的丢失位。" Language="C" CustomFbd="0" Localization="LibC" GroupName="中断" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="UIC" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="UIC" DataType="BOOL" InitialValue="" Comment="Rung 状态(与 Enable 相同)" Address="" Modifier="Constant" Kind="VarOutput" Alias="ENO" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IRQType" DataType="UDINT" InitialValue="" Comment="要启用的不同 IRQ 类型的连接。将 IRQ_* 定义的字用于此指令。" Address="" Modifier="Constant" Kind="VarInput" Alias="IRQ" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="COS_LREAL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="执行 64 位实型余弦计算。" Language="C" CustomFbd="0" Localization="LibC" GroupName="算术" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="COS_LREAL" ConvDirection="NoConversion" DataType="LREAL" />
+      <LocalVars>
+        <Variable Name="COS_LREAL" DataType="LREAL" InitialValue="" Comment="实型值的余弦结果" Address="" Modifier="Constant" Kind="VarOutput" Alias="RET" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="IN" DataType="LREAL" InitialValue="" Comment="余弦的输入参数 (位于集合 [-1.0 .. +1.0] 内)。" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="UIF" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="刷新特定用户中断。" Language="C" CustomFbd="0" Localization="LibC" GroupName="中断" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="UIF" ConvDirection="NoConversion" DataType="BOOL" />
+      <LocalVars>
+        <Variable Name="UIF" DataType="BOOL" InitialValue="" Comment="Rung 状态(与 Enable 相同)" Address="" Modifier="Constant" Kind="VarOutput" Alias="ENO" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="IRQType" DataType="UDINT" InitialValue="" Comment="要刷新的不同 IRQ 类型的连接。将 IRQ_* 定义的字用于此指令。" Address="" Modifier="Constant" Kind="VarInput" Alias="IRQ" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="ACOS_LREAL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="执行 64 位实型反余弦计算。" Language="C" CustomFbd="0" Localization="LibC" GroupName="算术" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <Function IdentifierNb="0" Keyword="ACOS_LREAL" ConvDirection="NoConversion" DataType="LREAL" />
+      <LocalVars>
+        <Variable Name="ACOS_LREAL" DataType="LREAL" InitialValue="" Comment="实型值的反余弦结果" Address="" Modifier="Constant" Kind="VarOutput" Alias="RET" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="IN" DataType="LREAL" InitialValue="" Comment="反余弦的输入参数。必须位于集合 [-1.0 .. +1.0] 内。" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="ARD" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="从输入缓冲区读取字符，并将这些字符放置到某个字符串中。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="ARD" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ARDInput" DataType="ARDARL" InitialValue="" Comment="要操作的通道" Address="" Modifier="Constant" Kind="VarInput" Alias="ARDI" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - 正在执行功能块，TRUE - 已完成执行功能块。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Destination" DataType="ASCIILOCADDR" InitialValue="" Comment="用于存储字符的字符串元素。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Dest" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="NumChar" DataType="UINT" InitialValue="" Comment="字符数。" Address="" Modifier="Constant" Kind="VarOutput" Alias="NumC" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="请参见 ABL 错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="controlbit" DataType="BYTE" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="MM_INFO" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="读取内存模块标题信息。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="MM_INFO" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="MMInfo" DataType="MMINFO" InitialValue="" Comment="内存模块信息。" Address="" Modifier="Constant" Kind="VarOutput" Alias="MMIN" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="AHL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="设置或重置调制解调器握手信号行。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="AHL" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="AHLInput" DataType="AHLI" InitialValue="" Comment="要操作的通道" Address="" Modifier="Constant" Kind="VarInput" Alias="AHLI" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - 正在执行功能块，TRUE - 已完成执行功能块。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ChannelSts" DataType="WORD" InitialValue="" Comment="显示当前状态 (0000 到 001F)" Address="" Modifier="Constant" Kind="VarOutput" Alias="Chan" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="请参见 ABL 错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="controlbit" DataType="BYTE" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="IPIDCONTROLLER" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="比例积分微分。" Language="C" CustomFbd="0" Localization="LibC" GroupName="流程控制" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="IPIDCONTROLLER" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Process" DataType="REAL" InitialValue="" Comment="进程值" Address="" Modifier="Constant" Kind="VarInput" Alias="P" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="SetPoint" DataType="REAL" InitialValue="" Comment="设置点" Address="" Modifier="Constant" Kind="VarInput" Alias="SP" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="FeedBack" DataType="REAL" InitialValue="" Comment="反馈" Address="" Modifier="Constant" Kind="VarInput" Alias="FB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Auto" DataType="BOOL" InitialValue="" Comment="TRUE - 控制器以正常模式运行，FALSE - 控制器导致将 R 复位为跟踪 (F-GE)。" Address="" Modifier="Constant" Kind="VarInput" Alias="AUTO" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Initialize" DataType="BOOL" InitialValue="" Comment="值的更改 (TRUE 更改为 FALSE 或 FALSE 更改为 TRUE) 导致在该循环期间控制器消除任何比例增益。" Address="" Modifier="Constant" Kind="VarInput" Alias="INIT" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Gains" DataType="GAIN_PID" InitialValue="" Comment="IPIDController 的增益 PID。" Address="" Modifier="Constant" Kind="VarInput" Alias="GNS" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="AutoTune" DataType="BOOL" InitialValue="" Comment="当设置为 TRUE 且 Auto 和 Initialize 为 FALSE 时，AutoTune 序列已启动。" Address="" Modifier="Constant" Kind="VarInput" Alias="ATUN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ATParameters" DataType="AT_PARAM" InitialValue="" Comment="自动调节参数。" Address="" Modifier="Constant" Kind="VarInput" Alias="ATPA" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorMode" DataType="DINT" InitialValue="0" Comment="用于处理错误的模式。" Address="" Modifier="Constant" Kind="VarInput" Alias="ERR" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Output" DataType="REAL" InitialValue="" Comment="来自控制器的输出值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="OUT" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="AbsoluteError" DataType="REAL" InitialValue="" Comment="来自控制器的绝对错误 (Process - SetPoint)。" Address="" Modifier="Constant" Kind="VarOutput" Alias="AERR" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ATWarning" DataType="DINT" InitialValue="" Comment="0 - 没有自动调节完成，1 - 处于自动调节模式，2 - 自动调节完成，-1 - 错误 1 输入自动设置为 TRUE，不可能进行自动调节，-2 - 错误 2 自动调节错误，ATDynaSet 已过期。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ATW" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="OutGains" DataType="GAIN_PID" InitialValue="" Comment="在 AutoTune 序列之后计算的增益。" Address="" Modifier="Constant" Kind="VarOutput" Alias="OGNS" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="RESERVED_IPIDCONTROLLER" DataType="SINT" InitialValue="" Comment="为 IPIDCONTROLLER 保留的参数。" Address="" Modifier="Constant" Kind="Var" Alias="RDIC" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="184" />
+        </Variable>
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="IOM" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="在进行正常输出扫描前更新输出。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="IOM" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="OutputType" DataType="USINT" InitialValue="" Comment="0 - 嵌入式输出，1 - 插件输出" Address="" Modifier="Constant" Kind="VarInput" Alias="OUTT" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="OutputSlot" DataType="USINT" InitialValue="" Comment="0 - 嵌入式，1 到 5 - 插件输出" Address="" Modifier="Constant" Kind="VarInput" Alias="OUTS" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="USINT" InitialValue="" Comment="即时输出扫描状态。请参见 IIM/IOM 状态代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="PLUGIN_INFO" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="从类属插件模块中获取模块信息。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="PLUGIN_INFO" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="SlotID" DataType="UINT" InitialValue="" Comment="1 到 5 - 插件插槽编号。" Address="" Modifier="Constant" Kind="VarInput" Alias="ID" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ModID" DataType="UINT" InitialValue="" Comment="插件类模块物理 ID。" Address="" Modifier="Constant" Kind="VarOutput" Alias="MDID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="VendorID" DataType="UINT" InitialValue="" Comment="插件类模块供应商 ID。" Address="" Modifier="Constant" Kind="VarOutput" Alias="VDID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ProductType" DataType="UINT" InitialValue="" Comment="插件类模块产品类型。" Address="" Modifier="Constant" Kind="VarOutput" Alias="PDTP" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ProductCode" DataType="UINT" InitialValue="" Comment="插件类模块产品代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="PDCD" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ModRevision" DataType="UINT" InitialValue="" Comment="插件类模块版本信息。" Address="" Modifier="Constant" Kind="VarOutput" Alias="MDRV" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="ACL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="清除接收和/或传输缓冲区。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="ACL" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ACLInput" DataType="ACLI" InitialValue="" Comment="要操作的通道" Address="" Modifier="Constant" Kind="VarInput" Alias="ACLI" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - 正在执行功能块，TRUE - 已完成执行功能块。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="请参见 ABL 错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="prestatus" DataType="BOOL" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="ABL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="指定缓冲区中的字符数（包括行结束符）。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="ABL" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ABLInput" DataType="ABLACB" InitialValue="" Comment="要操作的通道" Address="" Modifier="Constant" Kind="VarInput" Alias="ABLI" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - 正在执行功能块，TRUE - 已完成执行功能块。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Characters" DataType="UINT" InitialValue="" Comment="字符数。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Char" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="请参见 ABL 错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="controlbit" DataType="BYTE" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="ARL" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="从输入缓冲区读取行，并将字符放置到某个字符串中。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="ARL" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ARLInput" DataType="ARDARL" InitialValue="" Comment="要操作的通道" Address="" Modifier="Constant" Kind="VarInput" Alias="ARLI" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - 正在执行功能块，TRUE - 已完成执行功能块。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Destination" DataType="ASCIILOCADDR" InitialValue="" Comment="用于存储字符的字符串元素。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Dest" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="NumChar" DataType="UINT" InitialValue="" Comment="字符数。" Address="" Modifier="Constant" Kind="VarOutput" Alias="NumC" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="请参见 ABL 错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="controlbit" DataType="BYTE" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="SCALER" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="根据输出范围调整输入值。" Language="C" CustomFbd="0" Localization="LibC" GroupName="流程控制" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="SCALER" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Input" DataType="REAL" InitialValue="" Comment="输入信号。" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="InputMin" DataType="REAL" InitialValue="" Comment="输入的最小值" Address="" Modifier="Constant" Kind="VarInput" Alias="IMIN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="InputMax" DataType="REAL" InitialValue="" Comment="输入的最大值" Address="" Modifier="Constant" Kind="VarInput" Alias="IMAX" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="OutputMin" DataType="REAL" InitialValue="" Comment="输出的最小值" Address="" Modifier="Constant" Kind="VarInput" Alias="OMIN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="OutputMax" DataType="REAL" InitialValue="" Comment="输出的最大值" Address="" Modifier="Constant" Kind="VarInput" Alias="OMAX" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Output" DataType="REAL" InitialValue="" Comment="输出值" Address="" Modifier="Constant" Kind="VarOutput" Alias="OUT" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="AWA" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="写入某个字符串，该字符串包含追加到外部设备的字符。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="AWA" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="AWAInput" DataType="AWAAWT" InitialValue="" Comment="要操作的通道" Address="" Modifier="Constant" Kind="VarInput" Alias="AWAI" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Source" DataType="ASCIILOCADDR" InitialValue="" Comment="源字符串: 字符数组。" Address="" Modifier="Constant" Kind="VarInput" Alias="Src" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="__ADI_Source" DataType="UINT" InitialValue="0" Comment="&lt;Source&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - 正在执行功能块，TRUE - 已完成执行功能块。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="NumChar" DataType="UINT" InitialValue="" Comment="字符数。" Address="" Modifier="Constant" Kind="VarOutput" Alias="NumC" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="请参见 ABL 错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="controlbit" DataType="BYTE" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="RTC_SET" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="将 RTC 数据设置到 RTC 模块。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="RTC_SET" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="RTCEnable" DataType="BOOL" InitialValue="" Comment="FALSE - 禁用 RTC，TRUE - 使用指定的 RTC 数据启用 RTC。" Address="" Modifier="Constant" Kind="VarInput" Alias="RTEN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="RTCData" DataType="RTC" InitialValue="" Comment="RTC 数据信息: yy/mm/dd，hh/mm/ss，星期。" Address="" Modifier="Constant" Kind="VarInput" Alias="RTDT" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="RTCPresent" DataType="BOOL" InitialValue="" Comment="FALSE - 未插入 RTC 硬件，TRUE - 已插入 RTC 硬件。" Address="" Modifier="Constant" Kind="VarOutput" Alias="PRST" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="RTCEnabled" DataType="BOOL" InitialValue="" Comment="FALSE - 已禁用 RTC 硬件 (无计时)，TRUE - 已启用 RTC 硬件 (计时)。" Address="" Modifier="Constant" Kind="VarOutput" Alias="RTES" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="RTCBatLow" DataType="BOOL" InitialValue="" Comment="FALSE - RTC 电池电量不低，TRUE - RTC 电池电量低。" Address="" Modifier="Constant" Kind="VarOutput" Alias="RTBL" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="USINT" InitialValue="" Comment="读取操作状态。请参见 RTC 设置状态值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="IIM" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="在进行正常输入扫描前更新输入。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="IIM" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="InputType" DataType="USINT" InitialValue="" Comment="0 - 嵌入式输入，1 - 插件输入" Address="" Modifier="Constant" Kind="VarInput" Alias="INTY" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="InputSlot" DataType="USINT" InitialValue="" Comment="0 - 嵌入式，1 到 5 - 插件输入" Address="" Modifier="Constant" Kind="VarInput" Alias="INSL" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="USINT" InitialValue="" Comment="即时输入扫描状态。请参见 IIM/IOM 状态代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="PLUGIN_RESET" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="重置类属插件模块（硬件重置）。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="PLUGIN_RESET" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="SlotID" DataType="UINT" InitialValue="" Comment="1 到 5 - 插件插槽编号。" Address="" Modifier="Constant" Kind="VarInput" Alias="ID" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="UINT" InitialValue="" Comment="请参见插件类模块操作状态值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="AWT" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="将字符从源字符串写入到外部设备中。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="AWT" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="AWTInput" DataType="AWAAWT" InitialValue="" Comment="要操作的通道" Address="" Modifier="Constant" Kind="VarInput" Alias="AWTI" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Source" DataType="ASCIILOCADDR" InitialValue="" Comment="源字符串: 字符数组。" Address="" Modifier="Constant" Kind="VarInput" Alias="Src" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="__ADI_Source" DataType="UINT" InitialValue="0" Comment="&lt;Source&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - 正在执行功能块，TRUE - 已完成执行功能块。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="NumChar" DataType="UINT" InitialValue="" Comment="字符数。" Address="" Modifier="Constant" Kind="VarOutput" Alias="NumC" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="请参见 ABL 错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="controlbit" DataType="BYTE" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="TONOFF" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="延迟输出-打开（真），然后延迟输出-关闭（假）。" Language="C" CustomFbd="0" Localization="LibC" GroupName="时间" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="TONOFF" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="输入控制" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="PT" DataType="TIME" InitialValue="" Comment="打开延时时间设置。" Address="" Modifier="Constant" Kind="VarInput" Alias="PT" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="PTOF" DataType="TIME" InitialValue="" Comment="关闭延时时间设置。" Address="" Modifier="Constant" Kind="VarInput" Alias="PTOF" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="如果为 TRUE，则编程的打开延时时间已经过，而编程的关闭延时时间未经过。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ET" DataType="TIME" InitialValue="" Comment="如果编程的打开延时时间已经过，且关闭延时计时器未启动，则已经过时间 (ET) 仍为打开延时 (PT) 值。如果编程的关闭延时时间已经过，且关闭延时计时器未启动，则已经过时间 (ET) 保持不变" Address="" Modifier="Constant" Kind="VarOutput" Alias="ET" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="PDATE" DataType="TIME" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="REDGE" DataType="BOOL" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="FEDGE" DataType="BOOL" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="TRIMPOT_READ" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="从特定微调电位计中读取微调电位计数值。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="TRIMPOT_READ" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TrimPotID" DataType="UINT" InitialValue="" Comment="要读取的微调电位的 ID。请参见微调电位 ID 定义。" Address="" Modifier="Constant" Kind="VarInput" Alias="TPID" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TrimPotValue" DataType="UINT" InitialValue="" Comment="当前微调电位计数值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="TPVL" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="UINT" InitialValue="" Comment="读取操作状态。请参见微调电位操作状态值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="SUS" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="挂起应用程序的执行。" Language="C" CustomFbd="0" Localization="LibC" GroupName="程序控制" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="SUS" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="SusID" DataType="UINT" InitialValue="" Comment="挂起 ID" Address="" Modifier="Constant" Kind="VarInput" Alias="SID" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="ACB" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="确定缓冲区中的字符总数。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="ACB" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ACBInput" DataType="ABLACB" InitialValue="" Comment="要操作的通道" Address="" Modifier="Constant" Kind="VarInput" Alias="ACBI" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - 正在执行功能块，TRUE - 已完成执行功能块。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Characters" DataType="UINT" InitialValue="" Comment="字符数。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Char" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="请参见 ABL 错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="controlbit" DataType="BYTE" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="SYS_INFO" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="读取 Micro800 系统状态。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="SYS_INFO" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="SYSINFO" InitialValue="" Comment="系统状态数据块" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="RTC_READ" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="读取 RTC 模块信息。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="RTC_READ" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="RTCData" DataType="RTC" InitialValue="" Comment="RTC 数据信息: yy/mm/dd，hh/mm/ss，星期。" Address="" Modifier="Constant" Kind="VarOutput" Alias="RTCD" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="RTCPresent" DataType="BOOL" InitialValue="" Comment="FALSE - 未插入 RTC 硬件，TRUE - 已插入 RTC 硬件。" Address="" Modifier="Constant" Kind="VarOutput" Alias="PRST" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="RTCEnabled" DataType="BOOL" InitialValue="" Comment="FALSE - 已禁用 RTC 硬件 (无计时)，TRUE - 已启用 RTC 硬件 (计时)。" Address="" Modifier="Constant" Kind="VarOutput" Alias="RTES" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="RTCBatLow" DataType="BOOL" InitialValue="" Comment="FALSE - RTC 电池电量不低，TRUE - RTC 电池电量低。" Address="" Modifier="Constant" Kind="VarOutput" Alias="RTBL" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="PLUGIN_WRITE" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="将数据写入类属插件模块。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="PLUGIN_WRITE" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="SlotID" DataType="UINT" InitialValue="" Comment="1 到 5 - 插件插槽编号。" Address="" Modifier="Constant" Kind="VarInput" Alias="ID" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="AddrOffset" DataType="UINT" InitialValue="" Comment="要写入的第一个数据的地址偏移，从插件类模块的第一个字节计算。" Address="" Modifier="Constant" Kind="VarInput" Alias="AOFF" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="DataLength" DataType="UINT" InitialValue="" Comment="要写入的字节数。" Address="" Modifier="Constant" Kind="VarInput" Alias="DLEN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="DataArray" DataType="USINT" InitialValue="" Comment="要写入至插件类模块的数据。" Address="" Modifier="Constant" Kind="VarInput" Alias="DATA" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="1" />
+        </Variable>
+        <Variable Name="__ADI_DataArray" DataType="UINT" InitialValue="0" Comment="&lt;DataArray&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="UINT" InitialValue="" Comment="请参见插件类模块操作状态值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="PLUGIN_READ" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="从类属插件模块中读取数据。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="PLUGIN_READ" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="SlotID" DataType="UINT" InitialValue="" Comment="1 到 5 - 插件插槽编号。" Address="" Modifier="Constant" Kind="VarInput" Alias="ID" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="AddrOffset" DataType="UINT" InitialValue="" Comment="要读取的第一个数据的地址偏移，从插件类模块的第一个字节计算。" Address="" Modifier="Constant" Kind="VarInput" Alias="AOFF" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="DataLength" DataType="UINT" InitialValue="" Comment="要读取的字节数。" Address="" Modifier="Constant" Kind="VarInput" Alias="DLEN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="DataArray" DataType="USINT" InitialValue="" Comment="用于存储从插件类模块读取的数据的数组。" Address="" Modifier="Constant" Kind="VarInput" Alias="DATA" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="1" />
+        </Variable>
+        <Variable Name="__ADI_DataArray" DataType="UINT" InitialValue="0" Comment="&lt;DataArray&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="UINT" InitialValue="" Comment="请参见插件类模块操作状态值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="HSC" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="将高/低预设值及输出源应用到高速计数器。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="HSC" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="HscCmd" DataType="USINT" InitialValue="" Comment="请参见 HSC 命令值。" Address="" Modifier="Constant" Kind="VarInput" Alias="HscC" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="HscAppData" DataType="HSCAPP" InitialValue="" Comment="HSC 应用程序配置。" Address="" Modifier="Constant" Kind="VarInput" Alias="HscA" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="HscStsInfo" DataType="HSCSTS" InitialValue="" Comment="HSC 动态状态。" Address="" Modifier="Constant" Kind="VarInput" Alias="HscS" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="PlsData" DataType="PLS" InitialValue="" Comment="可编程限位开关 (PLS) 数据结构" Address="" Modifier="Constant" Kind="VarInput" Alias="PlsD" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="1" />
+        </Variable>
+        <Variable Name="__ADI_PlsData" DataType="UINT" InitialValue="0" Comment="&lt;PlsData&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="UINT" InitialValue="" Comment="执行状态。请参见 HSC 状态值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="HSC_SET_STS" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="手动设置/重置 HSC 状态。" Language="C" CustomFbd="0" Localization="LibC" GroupName="输入/输出" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="HSC_SET_STS" InitInstance="false" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="HscID" DataType="UINT" InitialValue="" Comment="要设置的 HSC 状态。" Address="" Modifier="Constant" Kind="VarInput" Alias="ID" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Mode1Done" DataType="BOOL" InitialValue="" Comment="模式 1A 或 1B 计数完成。" Address="" Modifier="Constant" Kind="VarInput" Alias="M1DN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="HPReached" DataType="BOOL" InitialValue="" Comment="达到高预设。" Address="" Modifier="Constant" Kind="VarInput" Alias="HPRe" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="LPReached" DataType="BOOL" InitialValue="" Comment="达到低预设。" Address="" Modifier="Constant" Kind="VarInput" Alias="LPRe" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="OFOcccurred" DataType="BOOL" InitialValue="" Comment="发生溢出。" Address="" Modifier="Constant" Kind="VarInput" Alias="OFOc" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="UFOccurred" DataType="BOOL" InitialValue="" Comment="发生下溢。" Address="" Modifier="Constant" Kind="VarInput" Alias="UFOc" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Sts" DataType="UINT" InitialValue="" Comment="请参见 HSC 状态值。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="MSG_MODBUS" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="通过串行通信端口发送 modbus 消息。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="MSG_MODBUS" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Cancel" DataType="BOOL" InitialValue="" Comment="1 - 取消执行功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="Canc" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="LocalCfg" DataType="MODBUSLOCPARA" InitialValue="" Comment="本地设备配置。" Address="" Modifier="Constant" Kind="VarInput" Alias="Loca" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TargetCfg" DataType="MODBUSTARPARA" InitialValue="" Comment="目标设备配置。" Address="" Modifier="Constant" Kind="VarInput" Alias="Targ" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="LocalAddr" DataType="MODBUSLOCADDR" InitialValue="" Comment="本地地址 (125 个文字)" Address="" Modifier="Constant" Kind="VarInput" Alias="Loca" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="__ADI_LocalAddr" DataType="UINT" InitialValue="0" Comment="&lt;LocalAddr&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - MSG 指令未完成，TRUE - MSG 指令已完成。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="消息传输失败时的错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="controlbit" DataType="BYTE" InitialValue="" Comment="保留为仅限内部使用。" Address="" Modifier="Constant" Kind="Var" Alias="Ctrl" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="MSG_MODBUS2" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="发送 modbus 消息。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="MSG_MODBUS2" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Cancel" DataType="BOOL" InitialValue="" Comment="1 - 取消执行功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="Canc" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="LocalCfg" DataType="MODBUS2LOCPARA" InitialValue="" Comment="本地设备配置。" Address="" Modifier="Constant" Kind="VarInput" Alias="Loca" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TargetCfg" DataType="MODBUS2TARPARA" InitialValue="" Comment="目标设备配置。" Address="" Modifier="Constant" Kind="VarInput" Alias="Targ" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="LocalAddr" DataType="MODBUSLOCADDR" InitialValue="" Comment="本地地址 (125 个文字)" Address="" Modifier="Constant" Kind="VarInput" Alias="Loca" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="__ADI_LocalAddr" DataType="UINT" InitialValue="0" Comment="&lt;LocalAddr&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - MSG 指令未完成，TRUE - MSG 指令已完成。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Error" DataType="BOOL" InitialValue="" Comment="FALSE - 无错误，TRUE - 检测到错误。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Err" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ErrorID" DataType="UINT" InitialValue="" Comment="消息传输失败时的错误代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="ErID" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="SubErrorID" DataType="UINT" InitialValue="" Comment="消息传输失败时的 SubError 代码。" Address="" Modifier="Constant" Kind="VarOutput" Alias="SuEr" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="StatusBits" DataType="UINT" InitialValue="" Comment="消息的执行状态。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Sts" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ctrl" DataType="UINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="CTRL" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="pfb" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="PFB" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="nfb" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="NFB" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="mtim" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="MTIM" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="MSG_CIPGENERIC" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="发送 CIP 显式消息。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="MSG_CIPGENERIC" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="CtrlCfg" DataType="CIPCONTROLCFG" InitialValue="" Comment="消息执行控制配置" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="AppCfg" DataType="CIPAPPCFG" InitialValue="" Comment="CIP 应用程序路径配置" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TargetCfg" DataType="CIPTARGETCFG" InitialValue="" Comment="CIP 目标配置" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ReqData" DataType="USINT" InitialValue="" Comment="CIP 请求数据" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="1" />
+        </Variable>
+        <Variable Name="ReqLength" DataType="UINT" InitialValue="" Comment="CIP 请求数据长度" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="ResData" DataType="USINT" InitialValue="" Comment="CIP 响应数据" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="1" />
+        </Variable>
+        <Variable Name="__ADI_ReqData" DataType="UINT" InitialValue="0" Comment="&lt;ReqData&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="__ADI_ResData" DataType="UINT" InitialValue="0" Comment="&lt;ResData&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - MSG 指令未完成，TRUE - MSG 指令已完成。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Status" DataType="CIPSTATUS" InitialValue="" Comment="消息的执行状态。" Address="" Modifier="Constant" Kind="VarOutput" Alias="" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ResLength" DataType="UINT" InitialValue="" Comment="CIP 响应数据长度" Address="" Modifier="Constant" Kind="VarOutput" Alias="" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ctrl" DataType="UINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="CTRL" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="pfb" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="PFB" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="nfb" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="NFB" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="mtim" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="MTIM" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="lpnum" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="MTIM" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="MSG_CIPSYMBOLIC" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="发送 CIP 符号消息。" Language="C" CustomFbd="0" Localization="LibC" GroupName="通信" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="MSG_CIPSYMBOLIC" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="IN" DataType="BOOL" InitialValue="" Comment="梯级输入状态" Address="" Modifier="Constant" Kind="VarInput" Alias="IN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="CtrlCfg" DataType="CIPCONTROLCFG" InitialValue="" Comment="消息执行控制配置" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="SymbolicCfg" DataType="CIPSYMBOLICCFG" InitialValue="" Comment="CIP 符号路径配置" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="TargetCfg" DataType="CIPTARGETCFG" InitialValue="" Comment="CIP 目标配置" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Data" DataType="USINT" InitialValue="" Comment="读取/写入数据" Address="" Modifier="Constant" Kind="VarInput" Alias="" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="1" />
+        </Variable>
+        <Variable Name="__ADI_Data" DataType="UINT" InitialValue="0" Comment="&lt;Data&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="Q" DataType="BOOL" InitialValue="" Comment="FALSE - MSG 指令未完成，TRUE - MSG 指令已完成。" Address="" Modifier="Constant" Kind="VarOutput" Alias="Q" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="Status" DataType="CIPSTATUS" InitialValue="" Comment="消息的执行状态。" Address="" Modifier="Constant" Kind="VarOutput" Alias="" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="DataLength" DataType="UINT" InitialValue="" Comment="CIP 响应数据长度" Address="" Modifier="Constant" Kind="VarOutput" Alias="" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+        <Variable Name="ctrl" DataType="UINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="CTRL" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="pfb" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="PFB" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="nfb" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="NFB" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="mtim" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="MTIM" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+        <Variable Name="lpnum" DataType="UDINT" InitialValue="" Comment="功能块的隐藏参数" Address="" Modifier="Constant" Kind="Var" Alias="MTIM" AccessRights="ReadWrite" StringSize="0" Direction="Local" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+    <Pou FileVersion="200.00.003" Name="COP" ElementGuid="00000000-0000-0000-0000-000000000000" Comment="" SingleTextLine="将数据范围从一个位置复制到另一位置。" Language="C" CustomFbd="0" Localization="LibC" GroupName="数据转换" GenDebugInfo="false" UseResPassword="true" GenerateSymbMon="false" Is1499="false">
+      <FunctionBlock IdentifierNb="0" Keyword="COP" InitInstance="true" SymbMonExtraBytes="128" />
+      <LocalVars>
+        <Variable Name="Enable" DataType="BOOL" InitialValue="" Comment="启用功能块" Address="" Modifier="Constant" Kind="VarInput" Alias="ENAB" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Src" DataType="ANY_ELEMENTARY" InitialValue="" Comment="要复制的初始元素" Address="" Modifier="Constant" Kind="VarInput" Alias="SRC" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="1" />
+        </Variable>
+        <Variable Name="SrcOffset" DataType="UINT" InitialValue="" Comment="源元素的偏移" Address="" Modifier="Constant" Kind="VarInput" Alias="SOFF" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Dest" DataType="ANY_ELEMENTARY" InitialValue="" Comment="将被源覆盖的初始元素" Address="" Modifier="Constant" Kind="VarInput" Alias="DEST" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0">
+          <Dimension Lower="1" Upper="1" />
+        </Variable>
+        <Variable Name="DestOffset" DataType="UINT" InitialValue="" Comment="目标元素的偏移" Address="" Modifier="Constant" Kind="VarInput" Alias="DOFF" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Length" DataType="UINT" InitialValue="" Comment="要复制的目标元素数" Address="" Modifier="Constant" Kind="VarInput" Alias="LEN" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="Swap" DataType="BOOL" InitialValue="" Comment="根据数据类型交换字节" Address="" Modifier="Constant" Kind="VarInput" Alias="SWAP" AccessRights="Read" StringSize="0" Direction="Input" CommentFields="" Attributes="0" />
+        <Variable Name="__ADI_Src" DataType="UINT" InitialValue="0" Comment="&lt;Src&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="__ADI_Dest" DataType="UINT" InitialValue="0" Comment="&lt;Dest&gt; 数组输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_ADI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="__DTI_Src" DataType="SINT" InitialValue="0" Comment="ANY_ELEMENTARY 输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_DTI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="__DTI_Dest" DataType="SINT" InitialValue="0" Comment="ANY_ELEMENTARY 输入的 ADI 隐藏参数" Address="" Modifier="Constant" Kind="VarInput" Alias="_DTI" AccessRights="ReadWrite" StringSize="0" Direction="Hidden" CommentFields="" Attributes="0" />
+        <Variable Name="STS" DataType="UINT" InitialValue="" Comment="COP operation status" Address="" Modifier="Constant" Kind="VarOutput" Alias="STS" AccessRights="Write" StringSize="0" Direction="Output" CommentFields="" Attributes="0" />
+      </LocalVars>
+      <PouBody />
+      <PouUIProperties />
+    </Pou>
+  </Pous>
+  <IODevices>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="analogOut_EX" DataType="INT" MinChannel="0" MaxChannel="32" Direction="Output" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="digitIn_Base" DataType="BOOL" MinChannel="0" MaxChannel="32" Direction="Input" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="analogOut_UP" DataType="UINT" MinChannel="0" MaxChannel="8" Direction="Output" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="analogIn_EX" DataType="INT" MinChannel="0" MaxChannel="32" Direction="Input" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="digitOut_Base" DataType="BOOL" MinChannel="0" MaxChannel="32" Direction="Output" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="analogIn_UP" DataType="UINT" MinChannel="0" MaxChannel="8" Direction="Input" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="digitIn_EX" DataType="BOOL" MinChannel="0" MaxChannel="64" Direction="Input" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="digitIn_UP" DataType="BOOL" MinChannel="0" MaxChannel="16" Direction="Input" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="digitOut_EX" DataType="BOOL" MinChannel="0" MaxChannel="64" Direction="Output" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="digitOut_UP" DataType="BOOL" MinChannel="0" MaxChannel="16" Direction="Output" IsSimple="true" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="IOUP_Analog" DataType="BOOL" MinChannel="0" MaxChannel="0" Direction="Input" IsSimple="false" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+      <Devices>
+        <Device Name="analogOut_UP" />
+        <Device Name="analogIn_UP" />
+      </Devices>
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="IOUP_Digit" DataType="BOOL" MinChannel="0" MaxChannel="0" Direction="Input" IsSimple="false" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+      <Devices>
+        <Device Name="digitOut_UP" />
+        <Device Name="digitIn_UP" />
+      </Devices>
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="IOEX_Analog" DataType="BOOL" MinChannel="0" MaxChannel="0" Direction="Input" IsSimple="false" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+      <Devices>
+        <Device Name="analogOut_EX" />
+        <Device Name="analogIn_EX" />
+      </Devices>
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="IOEX_Digit" DataType="BOOL" MinChannel="0" MaxChannel="0" Direction="Input" IsSimple="false" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+      <Devices>
+        <Device Name="digitOut_EX" />
+        <Device Name="digitIn_EX" />
+      </Devices>
+    </IODevice>
+    <IODevice DriverName="OPTIMUS_" PackageName="AB_" Name="IO_Base" DataType="BOOL" MinChannel="0" MaxChannel="0" Direction="Input" IsSimple="false" Comment="" SingleTextLine="">
+      <Parameters />
+      <ChannelParameters />
+      <Devices>
+        <Device Name="digitOut_Base" />
+        <Device Name="digitIn_Base" />
+      </Devices>
+    </IODevice>
+  </IODevices>
+</Target>

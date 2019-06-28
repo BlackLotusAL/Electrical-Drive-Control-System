@@ -1,0 +1,107 @@
+PROGRAM Main_Program
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIC  [1,0] (*c*) (**)  FB  [2,0] (*HSC*) (*HSC_1*) ( (*Enable:ENB*)(**) (**)  , (*HscCmd:HscC*)(*HscCmd*) (**)  , (*HscAppData:HscA*)(*HscAppData*) (**)  , (*HscStsInfo:HscS*)(*Hscstss*) (**)  , (*PlsData:PlsD*)(*PLSData*) (**)  , (*__ADI_PlsData:_ADI*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Sts:Sts*)(*sts*) (**) )  FB  [5,0] (*ANY_TO_REAL*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Hscstss.Accumulator*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*aaa*) (**) )  FB  [8,0] (*ABS*) (*5*) ( (*EN:EN*)(**) (**)  , (*IN:IN*)(*aaa*) (**) ; (*ENO:ENO*)(**) (**)  , (*ABS:Q*)(*bbb*) (**) )  FB  [11,0] (***) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*bbb*) (**)  , (*i2:*)(*0.00080038*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*b1*) (**) )
+EOR [14,0]
+
+
+(**)
+
+SOR  [0,8] (**) (**)  XIC  [1,0] (*c*) (**)  FB  [2,0] (*1 gain*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*a2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SetPoint*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,11] (**) (**)  XIC  [1,0] (*c*) (**)  FB  [2,0] (*+*) (*15*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*a1*) (**)  , (*i2:*)(*b1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*b2*) (**) )  FB  [5,0] (*1 gain*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*b2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*Process*) (**) )
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,15] (**) (**)  XIC  [1,0] (*c*) (**)  FB  [2,0] (*-*) (*8*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SetPoint*) (**)  , (*i2:*)(*Process*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*a3*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,19] (**) (**)  XIC  [1,0] (*c*) (**)  FB  [2,0] (*>*) (*12*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*a3*) (**)  , (*i2:*)(*0.0*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTS  [5,0] (*SetFwd*) (**)
+   NXB  OTR  [5,1] (*SetRev*) (**)
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,23] (**) (**)  XIC  [1,0] (*c*) (**)  FB  [2,0] (*<*) (*14*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*a3*) (**)  , (*i2:*)(*0.0*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTS  [5,0] (*SetRev*) (**)
+   NXB  OTR  [5,1] (*SetFwd*) (**)
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,27] (**) (**)  XIC  [1,0] (*c*) (**)  FB  [2,0] (*ABS*) (*13*) ( (*EN:EN*)(**) (**)  , (*IN:IN*)(*a3*) (**) ; (*ENO:ENO*)(**) (**)  , (*ABS:Q*)(*a4*) (**) )  
+ BST  FB  [5,0] (*>=*) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*a4*) (**)  , (*i2:*)(*3.0*) (**) ; (*o1:*)(**) (**) )  FB  [8,0] (*1 gain*) (*9*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*50.0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SpeedRef*) (**) )
+   NXB  FB  [5,3] (*<=*) (*11*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*a4*) (**)  , (*i2:*)(*3.0*) (**) ; (*o1:*)(**) (**) )  OTE  [8,3] (*programs*) (**)
+ BND
+
+EOR [11,0]
+
+
+(**)
+
+SOR  [0,34] (**) (**)  XIC  [1,0] (*c*) (**)  XIC  [2,0] (*programs*) (**)  FB  [3,0] (*IPIDCONTROLLER*) (*IPIDCONTROLLER_1*) ( (*EN:EN*)(**) (**)  , (*Process:P*)(*Process*) (**)  , (*SetPoint:SP*)(*SetPoint*) (**)  , (*FeedBack:FB*)(*Feedback*) (**)  , (*Auto:AUTO*)(*Auto*) (**)  , (*Initialize:INIT*)(*Initialize*) (**)  , (*Gains:GNS*)(*Gains*) (**)  , (*AutoTune:ATUN*)(*Initialize*) (**)  , (*ATParameters:ATPA*)(*ATParameters*) (**)  , (*ErrorMode:ERR*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*Output:OUT*)(*Output*) (**)  , (*AbsoluteError:AERR*)(*AbsoluteError*) (**)  , (*ATWarning:ATW*)(*ATWarning*) (**)  , (*OutGains:OGNS*)(*OutGains*) (**) )  FB  [6,0] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*Output*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*SpeedRef*) (**) )
+EOR [9,0]
+
+
+(**)
+
+SOR  [0,45] (**) (**)  XIO  [1,0] (*d*) (**)  FB  [2,0] (*RA_PFx_ENET_STS_CMD*) (*RA_PFx_ENET_STS_CMD_1*) ( (*FBEN:*)(**) (**)  , (*IPAddress:*)(*IPAddress*) (**)  , (*UpdateRate_ms:*)(*UpdateRate_ms*) (**)  , (*EnetCtrlTO_sec:*)(*EnetCtrlTO_sec*) (**)  , (*Stop:*)(*Stop*) (**)  , (*Start:*)(*Start*) (**)  , (*Jog:*)(*Jog*) (**)  , (*ClrFault:*)(*ClrFault*) (**)  , (*SetFwd:*)(*SetFwd*) (**)  , (*SetRev:*)(*SetRev*) (**)  , (*SpeedRef:*)(*SpeedRef*) (**)  , (*AccelTime1:*)(*AccelTime1*) (**)  , (*DecelTime1:*)(*DecelTime1*) (**) ; (*FBENO:*)(**) (**)  , (*FBError:*)(*FBError*) (**)  , (*CommLoss:*)(*CommonLoss*) (**)  , (*DriveType:*)(*DriveType*) (**)  , (*DriveFault:*)(*DriveFault*) (**)  , (*FaultCode:*)(*FaultCode*) (**)  , (*Ready:*)(*Ready*) (**)  , (*Active:*)(*Active*) (**)  , (*CmdFwd:*)(*CmdFwd*) (**)  , (*CmdRev:*)(*CmdRev*) (**)  , (*AtRef:*)(*AtRef*) (**)  , (*CmdSpeed:*)(*CmdSpeed*) (**)  , (*SpeedFeedback:*)(*SpeedFreedback*) (**)  , (*OutputCurrent:*)(*OutputCurrent*) (**)  , (*DCBusVoltage:*)(*DCBusVoltage*) (**)  , (*OutputVoltage:*)(*OutputVoltage*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,62] (**) (**)  XIC  [1,0] (*c*) (**)  XIC  [2,0] (*programs*) (**)  FB  [3,0] (*<=*) (*18*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*a4*) (**)  , (*i2:*)(*0.5*) (**) ; (*o1:*)(**) (**) )  FB  [6,0] (*<=*) (*18*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*SpeedFreedback*) (**)  , (*i2:*)(*5.0*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTE  [9,0] (*Stop*) (**)
+   NXB  OTR  [9,1] (*Start*) (**)
+ BND
+
+EOR [10,0]
+
+
+(**)
+
+SOR  [0,66] (**) (**)  XIC  [1,0] (*c*) (**)  XIC  [2,0] (*Start*) (**)  XIO  [3,0] (*Stop*) (**)  FB  [4,0] (*TON*) (*TON_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#100000s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(*et*) (**) )
+EOR [7,0]
+
+
+(**)
+
+SOR  [0,69] (**) (**)  XIC  [1,0] (*c*) (**)  
+ BST  XIC  [2,0] (*Start*) (**)  XIO  [3,0] (*Stop*) (**)
+   NXB  XIC  [2,1] (*reset*) (**)
+ BND
+  FB  [4,0] (*1 gain*) (*17*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*et*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*et1*) (**) )  FB  [7,0] (*ANY_TO_REAL*) (*19*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*et1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*et2*) (**) )  FB  [10,0] (*/*) (*20*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*et2*) (**)  , (*i2:*)(*1000.0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*times*) (**) )
+EOR [13,0]
+
+
+(**)
+
+SOR  [0,73] (**) (**)  XIC  [1,0] (*reset*) (**)  FB  [2,0] (*1 gain*) (*22*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*HscAppData.Accumulator*) (**) )
+EOR [5,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=22
+#end_info
+END_PROGRAM

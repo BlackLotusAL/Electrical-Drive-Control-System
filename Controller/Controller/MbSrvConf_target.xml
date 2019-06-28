@@ -1,0 +1,86 @@
+<modbusServer Version="2.0">
+  <modbusRegister name="COILS">
+    <mapping variable="Start@Main_Program" parent="Main_Program" dataType="Bool" address="000001" va="0x44a">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="SetFwd@Main_Program" parent="Main_Program" dataType="Bool" address="000002" va="0x44d">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="SetRev@Main_Program" parent="Main_Program" dataType="Bool" address="00003" va="0x44e">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="Jog@Main_Program" parent="Main_Program" dataType="Bool" address="000004" va="0x44b">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="Stop@Main_Program" parent="Main_Program" dataType="Bool" address="000005" va="0x449">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="ClrFault@Main_Program" parent="Main_Program" dataType="Bool" address="000018" va="0x44c">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="c@Main_Program" parent="Main_Program" dataType="Bool" address="01000" va="0x460">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="d@Main_Program" parent="Main_Program" dataType="Bool" address="01001" va="0x461">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="reset@Main_Program" parent="Main_Program" dataType="Bool" address="000006" va="0x45e">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+  </modbusRegister>
+  <modbusRegister name="DISCRETES_INPUTS">
+    <mapping variable="CommonLoss@Main_Program" parent="Main_Program" dataType="Bool" address="100010" va="0x451">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="Ready@Main_Program" parent="Main_Program" dataType="Bool" address="100011" va="0x453">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="Active@Main_Program" parent="Main_Program" dataType="Bool" address="100012" va="0x454">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="DriveFault@Main_Program" parent="Main_Program" dataType="Bool" address="100013" va="0x452">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="CmdFwd@Main_Program" parent="Main_Program" dataType="Bool" address="100014" va="0x455">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="CmdRev@Main_Program" parent="Main_Program" dataType="Bool" address="100015" va="0x456">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+  </modbusRegister>
+  <modbusRegister name="HOLDING_REGISTERS">
+    <mapping variable="SpeedRef@Main_Program" parent="Main_Program" dataType="Real" address="400100" va="0x4b4">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="AccelTime1@Main_Program" parent="Main_Program" dataType="Real" address="400102" va="0x47c">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="DecelTime1@Main_Program" parent="Main_Program" dataType="Real" address="400104" va="0x480">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="SpeedFreedback@Main_Program" parent="Main_Program" dataType="Real" address="400106" va="0x488">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="OutputVoltage@Main_Program" parent="Main_Program" dataType="Real" address="400108" va="0x494">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="OutputCurrent@Main_Program" parent="Main_Program" dataType="Real" address="400110" va="0x48c">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="ss@Main_Program" parent="Main_Program" dataType="UInt" address="400201" va="0x472">
+      <MBVarInfo ElemType="UInt" SubElemType="Any" DataTypeSize="2" />
+    </mapping>
+    <mapping variable="a1@Main_Program" parent="Main_Program" dataType="Real" address="400300" va="0x4b8">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="a2@Main_Program" parent="Main_Program" dataType="Real" address="400302" va="0x4bc">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="times@Main_Program" parent="Main_Program" dataType="Real" address="400304" va="0x4d4">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="Process@Main_Program" parent="Main_Program" dataType="Real" address="400306" va="0x498">
+      <MBVarInfo ElemType="Real" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+  </modbusRegister>
+</modbusServer>
